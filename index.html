@@ -1,157 +1,531 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Third Peak Studio</title>
-    <link rel="icon" href="favicon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="theme.css" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <main>
-      <section class="hero">
-        <div class="hero__glow"></div>
-        <div class="container">
-          <div class="brand">
-            <img class="brand__logo" src="tps_logo.png" alt="" />
-            <span class="brand__name">Third Peak Studio</span>
-          </div>
-          <div class="hero__graphic" aria-hidden="true">
-            <img src="hero_graphic.jpg" alt="" />
-          </div>
-          <!-- <div class="pill reveal">Direct-to-Human Technology</div> -->
-          <div class="hero__container">
-            <h1 class="reveal" style="--delay: 0.1s">
-              Technology that elevates
-              <br />
-              the Human Experience
-            </h1>
-            <p class="hero__tagline reveal" style="--delay: 0.2s">
-              Tools that help you think, move, rest, grow, and thrive.
-            </p>
-            <p class="hero__intro reveal" style="--delay: 0.3s">
-              At Third Peak Studio, we believe technology should lighten the load,
-              not add to it. We build Direct-to-Human (DTH) applications that help
-              people feel more grounded, more capable, and more connected to what
-              matters most. No noise. No complexity. Just tools that fit into real
-              life and quietly make it better.
-            </p>
-            <div class="hero__actions reveal" style="--delay: 0.4s">
-              <a class="button primary" href="#follow">Follow our journey</a>
-              <a class="button ghost" href="#approach">Explore our approach</a>
-            </div>
-          </div>
-        </div>
-      </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Third Peak — Strategy, Education &amp; Product Studio</title>
+  <meta name="description" content="Third Peak helps businesses adapt and thrive in the AI era — through strategy, education, and product design, development, and launch." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="theme.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
 
-      <section class="about" id="approach">
-        <div class="container">
-          <div class="section-header reveal">
-            <h2>Mission</h2>
-            <p>
-              To craft digital tools that help people live healthier, simpler,
-              more intentional lives.
-            </p>
-          </div>
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════════════ -->
+  <nav class="nav" id="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand" aria-label="Third Peak home">
+        <svg class="peak-mark" viewBox="0 0 80 48" fill="none" aria-hidden="true">
+          <path d="M0 48 L18 28 L36 48Z"   fill="currentColor" opacity="0.30"/>
+          <path d="M14 48 L36 12 L58 48Z"  fill="currentColor" opacity="0.62"/>
+          <path d="M32 48 L56 2 L80 48Z"   fill="currentColor"/>
+        </svg>
+        <span class="nav-wordmark">Third Peak</span>
+      </a>
 
-          <div class="about__grid">
-            <article class="card reveal" style="--delay: 0.1s">
-              <h3>What We Build</h3>
-              <p>
-                Third Peak Studio is a small, independent studio creating
-                focused data and AI applications. Our products are designed to
-                support everyday decisions, habits, and well-being -- whether
-                that's finding more time, moving more, sleeping better, or
-                simply feeling less overwhelmed.
-              </p>
-            </article>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+        <span></span>
+      </button>
 
-            <article class="card reveal" style="--delay: 0.2s">
-              <h3>Our Approach: Direct-to-Human (DTH)</h3>
-              <p>
-                Most technology is designed for clicks, views, or conversions.
-                Ours is designed for people. Direct-to-Human means:
-              </p>
-              <ul>
-                <li>Clear purpose and gentle interfaces</li>
-                <li>Respect for attention, privacy, and time</li>
-                <li>Features that support real-world behavior, not endless engagement</li>
-                <li>A focus on long-term benefit over short-term metrics</li>
-              </ul>
-              <p>Technology should feel like support, not pressure.</p>
-            </article>
-          </div>
-        </div>
-      </section>
+      <div class="nav-links" id="navLinks" role="list">
+        <a href="#strategy"  class="nav-link" role="listitem">Strategy</a>
+        <a href="#education" class="nav-link" role="listitem">Education</a>
+        <a href="#studio"    class="nav-link" role="listitem">Studio</a>
+        <a href="#approach"  class="nav-link" role="listitem">Approach</a>
+        <a href="#contact"   class="nav-cta"  role="listitem">Let's Talk</a>
+      </div>
+    </div>
+  </nav>
 
-      <section class="follow" id="follow">
-        <div class="container">
-          <div class="follow__panel reveal">
-            <div>
-              <h2>Follow our journey</h2>
-              <p>
-                Sign up to hear when new tools
-                launch, get early access, and follow what we're building at
-                Third Peak Studio.
-              </p>
-            </div>
-            <div>
-              <p class="helper">
-                Email us at
-                <a href="mailto:info@thirdpeakstudio.com">info@thirdpeakstudio.com</a>
-              </p>
-              <p class="helper">
-                We'll only email when we have something meaningful to share. No
-                spam, no selling your data.
-              </p>
-            </div>
-<!--             <form class="signup" id="signupForm">
-              <label for="email">Email address</label>
-              <div class="signup__row">
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="you@example.com"
-                  required
-                />
-                <button class="button primary" type="submit">
-                  Keep me in the loop
-                </button>
-              </div>
-              <p class="helper">
-                We'll only email when we have something meaningful to share. No
-                spam, no selling your data.
-              </p>
-              <p class="helper">
-                Prefer to reach out directly? Email us at
-                <a href="mailto:info@thirdpeakstudio.com">info@thirdpeakstudio.com</a>
-              </p>
-              <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
-            </form>
- -->          </div>
-        </div>
-      </section>
-    </main>
+  <main>
 
-    <footer class="footer">
-      <div class="container">
-        <p>Copyright &copy; 2025 Third Peak Ltd</p>
-        <div class="footer__links">
-          <a href="support.html">Support</a>
-          <a href="privacy.html">Privacy</a>
-          <a href="delete-account.html">Delete account</a>
+    <!-- ═══════════════════════════════════════════
+         HERO
+    ════════════════════════════════════════════ -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-orb hero-orb-teal"></div>
+        <div class="hero-orb hero-orb-amber"></div>
+      </div>
+
+      <!-- Mountain range illustration -->
+      <div class="hero-mountain" aria-hidden="true">
+        <svg viewBox="0 0 560 380" fill="none" preserveAspectRatio="xMidYMax meet">
+          <!-- Distant haze layer -->
+          <path class="mp1" d="M0 380 L100 240 L200 300 L310 180 L420 250 L560 210 L560 380Z"
+            fill="rgba(12,184,165,0.04)"/>
+          <!-- Mid range -->
+          <path class="mp2" d="M0 380 L80 270 L180 310 L290 200 L400 260 L520 220 L560 230 L560 380Z"
+            fill="rgba(12,184,165,0.06)"/>
+          <!-- Foreground peak 1 (left, small) -->
+          <path class="mp3" d="M0 380 L90 255 L180 380Z"
+            fill="rgba(12,184,165,0.11)" stroke="rgba(12,184,165,0.22)" stroke-width="1"/>
+          <!-- Foreground peak 2 (center-left, medium) -->
+          <path class="mp4" d="M70 380 L220 135 L370 380Z"
+            fill="rgba(12,184,165,0.07)" stroke="rgba(12,184,165,0.16)" stroke-width="1"/>
+          <!-- The Third Peak (tallest, glowing) -->
+          <path class="mp5" d="M200 380 L380 8 L560 380Z"
+            fill="rgba(12,184,165,0.04)" stroke="rgba(12,184,165,0.32)" stroke-width="1.5"/>
+          <!-- Apex glow -->
+          <circle class="m-apex-ring" cx="380" cy="8" r="18" fill="#0cb8a5" opacity="0.10"/>
+          <circle class="m-apex-ring" cx="380" cy="8" r="10" fill="#0cb8a5" opacity="0.20"/>
+          <circle class="m-apex"      cx="380" cy="8" r="4"  fill="#0cb8a5"/>
+        </svg>
+      </div>
+
+      <!-- Content -->
+      <div class="hero-content">
+        <span class="hero-eyebrow">Strategy &middot; Education &middot; Product</span>
+        <h1 class="hero-heading">
+          The AI era is rewriting<br>
+          the rules of business.<br>
+          <em>Adapt</em> or <em>fall behind</em>.
+        </h1>
+        <p class="hero-sub">
+          Third Peak helps businesses navigate the shift &mdash; with strategy
+          that cuts through the noise and technology that drives real results.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact"    class="btn btn-primary">Start a Conversation</a>
+          <a href="#consulting" class="btn btn-ghost">How We Work</a>
         </div>
       </div>
-    </footer>
 
-    <script src="script.js"></script>
-  </body>
+      <!-- Scroll indicator -->
+      <div class="hero-scroll" aria-hidden="true">
+        <div class="hero-scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         MARQUEE
+    ════════════════════════════════════════════ -->
+    <div class="marquee-wrap" aria-hidden="true">
+      <div class="marquee-track">
+        <span class="marquee-item">AI Strategy</span>
+        <span class="marquee-sep">&middot;</span>
+        <span class="marquee-item">AI Education</span>
+        <span class="marquee-sep">&middot;</span>
+        <span class="marquee-item">Product Design &amp; Development</span>
+        <span class="marquee-sep">&middot;</span>
+        <span class="marquee-item">Get Unstuck. Adapt. Thrive.</span>
+        <span class="marquee-sep">&middot;</span>
+        <span class="marquee-item">Business Transformation</span>
+        <span class="marquee-sep">&middot;</span>
+        <span class="marquee-item">Product Launch</span>
+        <span class="marquee-sep">&middot;</span>
+        <span class="marquee-item">AI Strategy</span>
+        <span class="marquee-sep">&middot;</span>
+        <span class="marquee-item">AI Education</span>
+        <span class="marquee-sep">&middot;</span>
+        <span class="marquee-item">Product Design &amp; Development</span>
+        <span class="marquee-sep">&middot;</span>
+        <span class="marquee-item">Get Unstuck. Adapt. Thrive.</span>
+        <span class="marquee-sep">&middot;</span>
+        <span class="marquee-item">Business Transformation</span>
+        <span class="marquee-sep">&middot;</span>
+        <span class="marquee-item">Product Launch</span>
+        <span class="marquee-sep">&middot;</span>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         STAKES / THE PROBLEM
+    ════════════════════════════════════════════ -->
+    <section class="section section-stakes" aria-label="The problem">
+      <div class="container">
+        <span class="eyebrow reveal">Sound familiar?</span>
+        <h2 class="section-heading reveal" style="--delay: 0.1s">
+          You&rsquo;re not stuck because<br>you lack the vision.
+        </h2>
+
+        <div class="stakes-grid">
+
+          <article class="stake-card reveal" style="--delay: 0.05s">
+            <div class="stake-num">01</div>
+            <h3>The opportunity is clear. The path through it isn&rsquo;t.</h3>
+            <p>AI is changing every industry &mdash; your competitive landscape, your customer expectations, your internal operations. You see it happening. But knowing where to start, what to build, and how to lead through it? That&rsquo;s a different challenge entirely.</p>
+          </article>
+
+          <article class="stake-card reveal" style="--delay: 0.15s">
+            <div class="stake-num">02</div>
+            <h3>You&rsquo;re building product when you should be solving for people.</h3>
+            <p>The roadmap grows. The features multiply. Somewhere between the technology and the outcome, the connection to the actual human you&rsquo;re trying to serve started to blur.</p>
+          </article>
+
+          <article class="stake-card reveal" style="--delay: 0.25s">
+            <div class="stake-num">03</div>
+            <h3>The strategy exists. The execution keeps stalling.</h3>
+            <p>The plan is written. The team is capable. But traction feels like it&rsquo;s always one breakthrough away &mdash; and you&rsquo;re not entirely sure why.</p>
+          </article>
+
+        </div>
+
+        <p class="stakes-resolve reveal" style="--delay: 0.35s">
+          Stuck isn&rsquo;t failure. Stuck is a signal. And it&rsquo;s exactly where we start.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SERVICES
+    ════════════════════════════════════════════ -->
+    <section class="section section-services" aria-label="Services" id="strategy">
+      <div class="container">
+        <span class="eyebrow reveal">How We Work</span>
+
+        <!-- Strategy -->
+        <div class="service-block reveal" style="--delay: 0.1s">
+          <div class="service-content">
+            <div class="service-meta">
+              <span class="service-tag">Strategy</span>
+              <span class="service-num">01</span>
+            </div>
+            <h2 class="service-heading">Strategic Advisory</h2>
+            <p class="service-lead">For leaders and organizations navigating the AI era &mdash; who need more than a generic framework.</p>
+            <p class="service-body">We work in focused engagements &mdash; not sprawling retainers &mdash; to sharpen your AI strategy, clarify your positioning, and build real momentum. Expect honesty, specificity, and a partner who understands both the mission and the mechanics of getting there.</p>
+            <ul class="service-list" aria-label="Strategy services">
+              <li>AI transformation strategy and roadmap</li>
+              <li>Go-to-market strategy for AI-era ventures</li>
+              <li>Product-market fit diagnosis and refinement</li>
+              <li>Investor readiness and narrative development</li>
+              <li>Organizational alignment and operating model design</li>
+            </ul>
+            <a href="#contact" class="service-cta">Work with us &rarr;</a>
+          </div>
+
+          <div class="visual-card">
+            <div class="visual-card-label">Typical Engagement</div>
+            <div class="visual-steps">
+              <div class="visual-step">
+                <span class="visual-step-num">1</span>
+                Discovery sprint
+              </div>
+              <div class="visual-step">
+                <span class="visual-step-num">2</span>
+                Strategy intensive
+              </div>
+              <div class="visual-step">
+                <span class="visual-step-num">3</span>
+                Execution support
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-divider"></div>
+
+        <!-- Education -->
+        <div class="service-block reveal" style="--delay: 0.1s" id="education">
+          <div class="service-content">
+            <div class="service-meta">
+              <span class="service-tag">Education</span>
+              <span class="service-num">02</span>
+            </div>
+            <h2 class="service-heading">AI Education &amp; Enablement</h2>
+            <p class="service-lead">The gap between understanding AI and actually using it is where most organizations stall.</p>
+            <p class="service-body">We close that gap through workshops, programs, and embedded learning &mdash; built around your business, your people, and your specific challenges. Not theory. Practical capability your team can apply the next day.</p>
+            <ul class="service-list" aria-label="Education services">
+              <li>AI literacy workshops for leadership and teams</li>
+              <li>Custom AI training programs and curricula</li>
+              <li>Hands-on tool and workflow adoption sessions</li>
+              <li>AI readiness assessments and upskilling plans</li>
+              <li>Speaking and facilitation</li>
+            </ul>
+            <a href="#contact" class="service-cta">Build your team&rsquo;s capability &rarr;</a>
+          </div>
+
+          <div class="visual-card">
+            <div class="visual-card-label">Learning Path</div>
+            <div class="visual-steps">
+              <div class="visual-step">
+                <span class="visual-step-num">1</span>
+                Readiness assessment
+              </div>
+              <div class="visual-step">
+                <span class="visual-step-num">2</span>
+                Custom program design
+              </div>
+              <div class="visual-step">
+                <span class="visual-step-num">3</span>
+                Hands-on enablement
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-divider"></div>
+
+        <!-- Studio -->
+        <div class="service-block reveal" style="--delay: 0.1s" id="studio">
+          <div class="service-content">
+            <div class="service-meta">
+              <span class="service-tag">Studio</span>
+              <span class="service-num">03</span>
+            </div>
+            <h2 class="service-heading">Product Studio</h2>
+            <p class="service-lead">We design, build, and launch products &mdash; from early concept to market.</p>
+            <p class="service-body">AI-powered applications, digital platforms, and software systems designed around how people actually work and live. We take ideas from whiteboard to shipped product &mdash; with a design-first approach, clean engineering, and a launch process built for real traction.</p>
+            <ul class="service-list" aria-label="Studio services">
+              <li>AI product design and development</li>
+              <li>Custom application and platform development</li>
+              <li>Product launch strategy and execution</li>
+              <li>UX/UI design and prototyping</li>
+              <li>Data systems and integrations</li>
+            </ul>
+            <a href="#contact" class="service-cta">Explore our work &rarr;</a>
+          </div>
+
+          <div class="visual-card">
+            <div class="visual-card-label">How We Build</div>
+            <div class="visual-steps">
+              <div class="visual-step">
+                <span class="visual-step-num">1</span>
+                Design &amp; prototype
+              </div>
+              <div class="visual-step">
+                <span class="visual-step-num">2</span>
+                Build &amp; iterate
+              </div>
+              <div class="visual-step">
+                <span class="visual-step-num">3</span>
+                Launch &amp; grow
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         THE THIRD PEAK STORY
+    ════════════════════════════════════════════ -->
+    <section class="section section-story" aria-label="Our story">
+      <div class="container">
+        <div class="story-body">
+
+          <div class="story-mark" aria-hidden="true">
+            <svg viewBox="0 0 80 48" fill="none">
+              <path d="M0 48 L18 28 L36 48Z"  fill="currentColor" opacity="0.30"/>
+              <path d="M14 48 L36 12 L58 48Z" fill="currentColor" opacity="0.62"/>
+              <path d="M32 48 L56 2 L80 48Z"  fill="currentColor"/>
+            </svg>
+          </div>
+
+          <span class="eyebrow eyebrow-light reveal">The Third Peak</span>
+
+          <blockquote class="story-quote reveal" style="--delay: 0.1s">
+            &ldquo;The third peak is always the hardest.<br>And the most rewarding.&rdquo;
+          </blockquote>
+
+          <div class="story-peaks-row reveal" style="--delay: 0.2s">
+
+            <div class="story-peak-card">
+              <div class="story-peak-n">01</div>
+              <div class="story-peak-label">Discovery</div>
+              <p>AI, complex systems, and the question that started it all: what makes human intelligence uniquely human? My first real job was building AI software at the frontier of science &mdash; applying machine learning to problems most people considered unsolvable. The best work I&rsquo;d ever done.</p>
+            </div>
+
+            <div class="story-peak-card">
+              <div class="story-peak-n">02</div>
+              <div class="story-peak-label">Leadership</div>
+              <p>Twenty years building and leading at the intersection of technology and business. Learning what it actually takes to move ideas from vision to reality at scale. Not a detour &mdash; preparation. Building the other half of the toolkit I was missing.</p>
+            </div>
+
+            <div class="story-peak-card">
+              <div class="story-peak-n">03</div>
+              <div class="story-peak-label">Convergence</div>
+              <p>This is where everything meets. Third Peak exists at the point where deep technical expertise, practical strategy, and human-centered product design converge. The view from here changes how you see everything below.</p>
+            </div>
+
+          </div>
+
+          <p class="story-close reveal" style="--delay: 0.3s">
+            I started Third Peak because the most consequential shift in how business works is happening right now &mdash; and most organizations are navigating it without the right guide. The AI era rewards those who move with clarity and purpose, and punishes those who wait for certainty that never arrives. I&rsquo;ve spent a career at the intersection of technology, strategy, and product. I help bridge that gap. Not as an outside advisor handing you a slide deck &mdash; as a strategic partner who understands both the mission and the mechanics of getting there.
+          </p>
+
+          <div class="founder-bio reveal" style="--delay: 0.4s">
+            <div class="founder-avatar" aria-hidden="true">
+              <svg viewBox="0 0 80 48" fill="none">
+                <path d="M0 48 L18 28 L36 48Z"  fill="currentColor" opacity="0.30"/>
+                <path d="M14 48 L36 12 L58 48Z" fill="currentColor" opacity="0.62"/>
+                <path d="M32 48 L56 2 L80 48Z"  fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="founder-info">
+              <div class="founder-name">Matt Coatney</div>
+              <div class="founder-title">Technologist &middot; Strategist &middot; Builder</div>
+              <div class="founder-role">Founder, Third Peak</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         APPROACH / PHILOSOPHY
+    ════════════════════════════════════════════ -->
+    <section class="section section-approach" aria-label="Our approach" id="approach">
+      <div class="container">
+        <span class="eyebrow reveal">Our Approach</span>
+        <h2 class="section-heading reveal" style="--delay: 0.1s">
+          Technology should feel like support,<br>not pressure.
+        </h2>
+
+        <div class="approach-grid">
+
+          <div class="approach-card reveal" style="--delay: 0.05s">
+            <div class="approach-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M3 18 Q7 14 9 11 Q11 8 14 8 Q17 8 18 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M15 4.5 L18.5 5 L18 8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Long games only</h3>
+            <p>We don&rsquo;t optimize for vanity metrics or short-term wins. Every strategy and every tool we build is designed to compound &mdash; to get more valuable over time, not more complicated.</p>
+          </div>
+
+          <div class="approach-card reveal" style="--delay: 0.15s">
+            <div class="approach-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Honest before helpful</h3>
+            <p>If the strategy is wrong, we&rsquo;ll tell you &mdash; before you invest more energy in the wrong direction. We&rsquo;d rather lose an engagement than give advice that doesn&rsquo;t serve you.</p>
+          </div>
+
+          <div class="approach-card reveal" style="--delay: 0.25s">
+            <div class="approach-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                <circle cx="12" cy="12" r="5.5" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="12" cy="12" r="9"   stroke="currentColor" stroke-width="1" stroke-dasharray="2.5 2"/>
+              </svg>
+            </div>
+            <h3>Deep before broad</h3>
+            <p>We take a small number of engagements so we can go deep. Our best work happens when we&rsquo;re genuinely invested in your outcome &mdash; not managing a client portfolio from a distance.</p>
+          </div>
+
+          <div class="approach-card reveal" style="--delay: 0.35s">
+            <div class="approach-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="7"  r="4" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Human at the center</h3>
+            <p>Every decision &mdash; strategic or technological &mdash; gets tested against one question: does this genuinely help a real person or organization move forward? If the answer isn&rsquo;t yes, we go back to the drawing board.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CONTACT / CTA
+    ════════════════════════════════════════════ -->
+    <section class="section section-contact" aria-label="Contact" id="contact">
+      <div class="container">
+        <div class="contact-inner">
+
+          <div class="contact-content reveal">
+            <span class="eyebrow eyebrow-light">Get in Touch</span>
+            <h2 class="contact-heading">Where are you stuck?</h2>
+            <p class="contact-lead">Most meaningful work begins with an honest conversation. Tell us where you are, and we&rsquo;ll tell you if &mdash; and how &mdash; we can help.</p>
+            <p class="contact-note">No pitch. No proposal. Just a real conversation.</p>
+            <a href="mailto:info@thirdpeakstudio.com" class="btn btn-primary btn-lg">
+              Start the conversation &rarr;
+            </a>
+            <p class="contact-secondary">
+              Or reach us directly at
+              <a href="mailto:info@thirdpeakstudio.com">info@thirdpeakstudio.com</a>
+            </p>
+          </div>
+
+          <div class="contact-visual reveal" style="--delay: 0.25s" aria-hidden="true">
+            <svg viewBox="0 0 340 220" fill="none">
+              <!-- Distant -->
+              <path d="M0 220 L70 150 L140 185 L210 120 L280 160 L340 145 L340 220Z"
+                fill="rgba(12,184,165,0.05)"/>
+              <!-- Mid -->
+              <path d="M0 220 L60 165 L125 195 L195 135 L265 170 L340 155 L340 220Z"
+                fill="rgba(12,184,165,0.07)"/>
+              <!-- Peak 1 -->
+              <path d="M0 220 L55 150 L110 220Z"
+                fill="rgba(12,184,165,0.13)" stroke="rgba(12,184,165,0.28)" stroke-width="1"/>
+              <!-- Peak 2 -->
+              <path d="M40 220 L145 95 L250 220Z"
+                fill="rgba(12,184,165,0.07)" stroke="rgba(12,184,165,0.18)" stroke-width="1"/>
+              <!-- Third Peak -->
+              <path d="M140 220 L238 12 L336 220Z"
+                fill="rgba(12,184,165,0.04)" stroke="rgba(12,184,165,0.36)" stroke-width="1.5"/>
+              <!-- Apex -->
+              <circle cx="238" cy="12" r="14" fill="#0cb8a5" opacity="0.12"/>
+              <circle cx="238" cy="12" r="7"  fill="#0cb8a5" opacity="0.22"/>
+              <circle cx="238" cy="12" r="3.5" fill="#0cb8a5"/>
+            </svg>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════ -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-inner">
+
+        <div class="footer-brand-block">
+          <a href="/" class="nav-brand" aria-label="Third Peak home">
+            <svg class="peak-mark" viewBox="0 0 80 48" fill="none" aria-hidden="true">
+              <path d="M0 48 L18 28 L36 48Z"   fill="currentColor" opacity="0.30"/>
+              <path d="M14 48 L36 12 L58 48Z"  fill="currentColor" opacity="0.62"/>
+              <path d="M32 48 L56 2 L80 48Z"   fill="currentColor"/>
+            </svg>
+            <span class="nav-wordmark">Third Peak</span>
+          </a>
+          <p class="footer-tagline">Helping businesses adapt and thrive in the AI era &mdash; through strategy, education, and product.</p>
+        </div>
+
+        <nav class="footer-links" aria-label="Footer navigation">
+          <div class="footer-col">
+            <div class="footer-col-label">Services</div>
+            <a href="#strategy">Strategy</a>
+            <a href="#education">Education</a>
+            <a href="#studio">Studio</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-label">Company</div>
+            <a href="mailto:info@thirdpeakstudio.com">Contact</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="support.html">Support</a>
+          </div>
+        </nav>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Third Peak Ltd. All rights reserved.</span>
+        <span>thirdpeakstudio.com</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
