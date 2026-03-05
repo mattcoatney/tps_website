@@ -1,0 +1,6 @@
+<!-- Third Peak — Mark only, monochrome white — use on slate/dark backgrounds -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 50" fill="none">
+  <path d="M0 48 L18 28 L36 48Z"  fill="#FFFFFF" opacity="0.30"/>
+  <path d="M14 48 L36 12 L58 48Z" fill="#FFFFFF" opacity="0.62"/>
+  <path d="M32 48 L56 2 L80 48Z"  fill="#FFFFFF"/>
+</svg>

@@ -1,0 +1,13 @@
+<!-- Third Peak — Horizontal, monochrome white — use on dark/colored backgrounds -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 262 50" fill="none">
+  <rect width="262" height="50" fill="#2D4057" rx="0"/>
+  <!-- Mountain mark — all white, opacity for depth -->
+  <path d="M0 48 L18 28 L36 48Z"  fill="#FFFFFF" opacity="0.30"/>
+  <path d="M14 48 L36 12 L58 48Z" fill="#FFFFFF" opacity="0.62"/>
+  <path d="M32 48 L56 2 L80 48Z"  fill="#FFFFFF"/>
+  <!-- Wordmark -->
+  <text x="92" y="37"
+        font-family="'Source Serif 4', Georgia, serif"
+        font-size="28" font-weight="400" letter-spacing="-0.5"
+        fill="#FFFFFF">Third Peak</text>
+</svg>
