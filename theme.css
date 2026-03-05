@@ -1,66 +1,69 @@
 :root {
   /* ─── Color Primitives ──────────────────────────── */
-  --forest-950: #080f0c;
-  --forest-900: #0e1f18;
-  --forest-800: #162e25;
-  --forest-700: #1d4232;
-  --forest-600: #255442;
-  --forest-500: #2e6b55;
-  --forest-400: #3e8a6e;
 
-  --teal-600: #0a8e7e;
-  --teal-500: #0cb8a5;
-  --teal-400: #2dd4c0;
-  --teal-300: #6ee7dd;
-  --teal-100: #d0f4f0;
+  /* Navy (dark sections, hero) */
+  --navy-950: #0F1C28;
+  --navy-900: #1B2A3B;
+  --navy-800: #223348;
+  --navy-700: #2A3F58;
 
-  --amber-700: #92540a;
-  --amber-600: #b36b0d;
-  --amber-500: #e89015;
-  --amber-400: #f5ac38;
-  --amber-300: #fac870;
+  /* Sage (primary accent) */
+  --sage-700: #356359;
+  --sage-600: #3E7268;
+  --sage-500: #4A7C6F;
+  --sage-400: #6BA394;
+  --sage-300: #92BFB4;
+  --sage-100: #D4EAE6;
 
-  --cream-50:  #fdfcf9;
-  --cream-100: #f8f6f1;
-  --cream-200: #f0ede6;
-  --cream-300: #e4e0d8;
-  --cream-400: #d3cec4;
+  /* Stone / warm off-white (page background) */
+  --stone-50:  #FDFCF9;
+  --stone-100: #F7F5F1;
+  --stone-200: #EFEDE8;
+  --stone-300: #E5E1D9;
+  --stone-400: #D6D1C8;
+  --stone-500: #C0BAB0;
 
-  --ink-950: #080f0c;
-  --ink-900: #111d18;
-  --ink-800: #1a2e28;
-  --ink-700: #243d36;
-  --ink-600: #3a5248;
-  --ink-500: #516e63;
-  --ink-400: #6b8880;
-  --ink-300: #96b0aa;
-  --ink-200: #c2d3cf;
-  --ink-100: #e2ebea;
+  /* Ink (text on light backgrounds) */
+  --ink-950: #0F1C28;
+  --ink-900: #1C2B3A;
+  --ink-800: #243547;
+  --ink-700: #2E4258;
+  --ink-600: #3D5566;
+  --ink-500: #4A5F6E;
+  --ink-400: #6B7F8C;
+  --ink-300: #8FA4AE;
+  --ink-200: #B8CDD3;
+  --ink-100: #DCE8EC;
+
+  /* Cream (text on dark backgrounds) */
+  --cream-100: #F0EDE7;
+  --cream-200: #D9D4CB;
+  --cream-300: #B8B2A8;
+  --cream-400: #918C84;
 
   /* ─── Semantic ──────────────────────────────────── */
-  --color-bg:              var(--cream-100);
-  --color-bg-alt:          var(--cream-200);
-  --color-bg-dark:         var(--forest-900);
-  --color-bg-dark-mid:     var(--forest-800);
-  --color-bg-darkest:      var(--forest-950);
+  --color-bg:              var(--stone-100);
+  --color-bg-alt:          var(--stone-200);
+  --color-bg-dark:         var(--navy-900);
+  --color-bg-dark-mid:     var(--navy-800);
+  --color-bg-darkest:      var(--navy-950);
 
   --color-text:            var(--ink-900);
-  --color-text-soft:       var(--ink-600);
+  --color-text-soft:       var(--ink-500);
   --color-text-muted:      var(--ink-400);
   --color-text-on-dark:    var(--cream-100);
-  --color-text-soft-dark:  var(--ink-200);
-  --color-text-muted-dark: var(--ink-300);
+  --color-text-soft-dark:  var(--cream-200);
+  --color-text-muted-dark: var(--cream-300);
 
-  --color-accent:          var(--teal-500);
-  --color-accent-light:    var(--teal-400);
-  --color-accent-warm:     var(--amber-500);
+  --color-accent:          var(--sage-500);
+  --color-accent-light:    var(--sage-400);
 
-  --color-border:          var(--cream-400);
-  --color-border-alt:      var(--cream-300);
+  --color-border:          var(--stone-400);
+  --color-border-alt:      var(--stone-300);
   --color-border-dark:     rgba(255, 255, 255, 0.09);
 
   /* ─── Typography ────────────────────────────────── */
-  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
   --font-body:    'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 
   --text-xs:   0.75rem;
@@ -99,10 +102,10 @@
   --r-full: 9999px;
 
   /* ─── Shadows ───────────────────────────────────── */
-  --shadow-sm:   0 1px 3px rgba(8,15,12,0.07), 0 1px 2px rgba(8,15,12,0.04);
-  --shadow-md:   0 4px 14px rgba(8,15,12,0.09), 0 2px 4px rgba(8,15,12,0.05);
-  --shadow-lg:   0 16px 48px rgba(8,15,12,0.13), 0 4px 12px rgba(8,15,12,0.07);
-  --shadow-teal: 0 8px 28px rgba(12,184,165,0.30);
+  --shadow-sm:   0 1px 3px rgba(15,28,40,0.07), 0 1px 2px rgba(15,28,40,0.04);
+  --shadow-md:   0 4px 14px rgba(15,28,40,0.09), 0 2px 4px rgba(15,28,40,0.05);
+  --shadow-lg:   0 16px 48px rgba(15,28,40,0.13), 0 4px 12px rgba(15,28,40,0.07);
+  --shadow-sage: 0 8px 28px rgba(74,124,111,0.28);
 
   /* ─── Motion ────────────────────────────────────── */
   --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);

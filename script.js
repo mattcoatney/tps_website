@@ -77,17 +77,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     window.scrollTo({ top, behavior: 'smooth' });
   });
 });
-
-/* ─── Subtle hero orb parallax ──────────────────── */
-const orbTeal  = document.querySelector('.hero-orb-teal');
-const orbAmber = document.querySelector('.hero-orb-amber');
-
-if (orbTeal && orbAmber) {
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    if (y < window.innerHeight) {
-      orbTeal.style.transform  = `translateY(${y * 0.18}px)`;
-      orbAmber.style.transform = `translateY(${y * 0.10}px)`;
-    }
-  }, { passive: true });
-}
