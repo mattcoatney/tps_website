@@ -619,6 +619,7 @@ h1, h2, h3, h4 {
   position: relative;
   display: flex;
   flex-direction: column;
+  min-height: 350px;
   gap: var(--sp-5);
   transition: transform var(--dur-base) var(--ease-out),
               box-shadow var(--dur-base) var(--ease-out);
@@ -635,7 +636,7 @@ h1, h2, h3, h4 {
   background: white;
 }
 
-.offering-card--featured::before {
+/* .offering-card--featured::before {
   content: '';
   position: absolute;
   top: 0;
@@ -645,7 +646,7 @@ h1, h2, h3, h4 {
   background: var(--sage-500);
   border-radius: var(--r-xl) var(--r-xl) 0 0;
 }
-
+ */
 .offering-badge {
   display: inline-block;
   font-size: var(--text-xs);
