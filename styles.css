@@ -998,19 +998,18 @@ h1, h2, h3, h4 {
 }
 
 .org-logo-item img {
-  height: 30px;
+  height: 40px;
   width: auto;
-  max-width: 180px;
-  /* Desaturate + slate tint; multiply blend makes white backgrounds vanish */
-  filter: grayscale(100%) sepia(0.5) hue-rotate(185deg) saturate(0.5) brightness(0.75);
-  mix-blend-mode: multiply;
-  opacity: 0.55;
+  max-width: 200px;
+  /* Desaturate then tint toward slate (#2D4057) */
+  filter: grayscale(100%) brightness(0.3) sepia(1) hue-rotate(185deg) saturate(0.7) brightness(1.1);
+  opacity: 0.65;
   transition: opacity 0.25s ease, filter 0.25s ease;
 }
 
 .org-logo-item img:hover {
-  opacity: 0.85;
-  filter: grayscale(100%) sepia(0.5) hue-rotate(185deg) saturate(0.5) brightness(0.9);
+  opacity: 0.9;
+  filter: grayscale(100%) brightness(0.3) sepia(1) hue-rotate(185deg) saturate(0.7) brightness(1.4);
 }
 
 @keyframes org-scroll {
