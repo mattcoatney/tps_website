@@ -998,18 +998,18 @@ h1, h2, h3, h4 {
 }
 
 .org-logo-item img {
-  height: 40px;
+  height: 52px;
   width: auto;
-  max-width: 200px;
-  /* Desaturate then tint toward slate (#2D4057) */
-  filter: grayscale(100%) brightness(0.3) sepia(1) hue-rotate(185deg) saturate(0.7) brightness(1.1);
+  max-width: 240px;
+  /* Slate tint: desaturate → darken → sepia → hue-rotate toward #2D4057 */
+  filter: grayscale(100%) brightness(0.35) sepia(1) hue-rotate(185deg) saturate(0.65) brightness(1.15);
   opacity: 0.65;
   transition: opacity 0.25s ease, filter 0.25s ease;
 }
 
 .org-logo-item img:hover {
   opacity: 0.9;
-  filter: grayscale(100%) brightness(0.3) sepia(1) hue-rotate(185deg) saturate(0.7) brightness(1.4);
+  filter: grayscale(100%) brightness(0.35) sepia(1) hue-rotate(185deg) saturate(0.65) brightness(1.45);
 }
 
 @keyframes org-scroll {
