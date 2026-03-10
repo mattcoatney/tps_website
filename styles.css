@@ -984,7 +984,7 @@ h1, h2, h3, h4 {
   align-items: center;
   gap: var(--sp-20);
   width: max-content;
-  animation: org-scroll 48s linear infinite;
+  animation: org-scroll 36s linear infinite;
 }
 
 .org-logo-item {
