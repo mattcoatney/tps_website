@@ -1156,6 +1156,12 @@ h1, h2, h3, h4 {
   display: none; /* shown only on mobile via media query */
 }
 
+.org-grid-mobile .org-logo-item img {
+  max-width: 160px;
+  height: auto;
+  max-height: 36px;
+}
+
 .org-carousel {
   overflow: hidden;
   -webkit-mask-image: linear-gradient(
@@ -1815,11 +1821,10 @@ h1, h2, h3, h4 {
   /* Carousel → static grid on mobile */
   .org-carousel   { display: none; }
   .org-grid-mobile {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--sp-6) var(--sp-8);
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-items: center;
+    gap: var(--sp-6);
   }
 
   .who-grid              { grid-template-columns: 1fr; }
