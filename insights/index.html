@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insights — Third Peak</title>
+  <meta name="description" content="Ideas, perspectives, and honest takes on the AI era — articles, podcast appearances, and more from Matt Coatney at Third Peak." />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../theme.css" />
+  <link rel="stylesheet" href="../styles.css" />
+
+  <style>
+  /* ══════════════════════════════════════════════
+     INSIGHTS PAGE — SPECIFIC STYLES
+  ══════════════════════════════════════════════ */
+
+  /* ── Hero ── */
+  .ins-hero {
+    padding: 130px 0 80px;
+    background: var(--jade-100);
+    border-bottom: 1px solid var(--jade-200);
+  }
+  .ins-hero .eyebrow { color: var(--jade-600); }
+  .ins-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    color: var(--ink-900);
+    max-width: 22ch;
+    margin-bottom: var(--sp-5);
+    line-height: 1.1;
+  }
+  .ins-hero p {
+    font-size: var(--text-lg);
+    color: var(--ink-600);
+    max-width: 52ch;
+    line-height: 1.75;
+  }
+
+  /* ── Filter Bar ── */
+  .filters-bar {
+    background: var(--stone-100);
+    padding: 14px 0;
+    position: sticky;
+    top: 72px;
+    z-index: 90;
+    border-bottom: 1px solid var(--stone-300);
+  }
+  .filters-inner {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .filters-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-text-muted);
+    margin-right: 4px;
+  }
+  .filters-divider {
+    width: 1px;
+    height: 20px;
+    background: var(--stone-300);
+    align-self: center;
+    margin: 0 6px;
+    flex-shrink: 0;
+  }
+  .filter-btn {
+    padding: 6px 14px;
+    border-radius: var(--r-full);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: transparent;
+    border: 1.5px solid var(--stone-300);
+    color: var(--ink-700);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: var(--font-body);
+  }
+  .filter-btn:hover {
+    border-color: var(--jade-500);
+    color: var(--jade-500);
+  }
+  .filter-btn.active {
+    background: var(--jade-500);
+    border-color: var(--jade-500);
+    color: white;
+  }
+
+  /* ── Grid ── */
+  .insights-body { padding: var(--sp-20) 0 var(--sp-32); }
+  .insights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  /* ── Base Card ── */
+  .ic {
+    background: white;
+    border: 1px solid var(--stone-300);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+  }
+  .ic:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--jade-300);
+  }
+  .ic.featured { grid-column: span 2; }
+
+  /* ── Card Image ── */
+  .ic-img {
+    position: relative;
+    overflow: hidden;
+    background: var(--jade-100);
+  }
+  .ic-img-ratio          { aspect-ratio: 16 / 9; }
+  .ic-img-ratio-wide     { aspect-ratio: 21 / 9; }
+  .ic-img-ratio-portrait { aspect-ratio: 3 / 4; }
+  .ic-img img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    inset: 0;
+  }
+  /* Podcast gradient placeholder */
+  .ic-img-podcast {
+    background: linear-gradient(135deg, var(--jade-700) 0%, var(--jade-500) 100%);
+  }
+  /* Spotlight amber top accent */
+  .ic.spotlight { border-top: 3px solid var(--amber-500); }
+  .ic.spotlight:hover { border-color: var(--amber-400); border-top-color: var(--amber-500); }
+
+  /* ── Badges (podcast mic, video) ── */
+  .ic-badge {
+    position: absolute;
+    bottom: 10px; right: 10px;
+    z-index: 2;
+    background: rgba(14, 26, 30, 0.70);
+    border-radius: var(--r-sm);
+    padding: 4px 10px;
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--font-body);
+  }
+
+  /* ── Card Body ── */
+  .ic-body { padding: 24px 28px 28px; flex: 1; display: flex; flex-direction: column; }
+  .ic-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--amber-700);
+    margin-bottom: 10px;
+    font-family: var(--font-body);
+  }
+  .ic-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .ic-tag {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--jade-700);
+    background: var(--jade-100);
+    padding: 3px 9px;
+    border-radius: var(--r-full);
+    font-family: var(--font-body);
+  }
+  .ic-body h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.35;
+    color: var(--ink-900);
+    margin-bottom: 10px;
+    flex: 1;
+  }
+  .ic.featured .ic-body h3 { font-size: 1.35rem; }
+  .ic-body p {
+    font-size: var(--text-sm);
+    color: var(--ink-500);
+    line-height: 1.7;
+    margin-bottom: 14px;
+  }
+  .ic-show {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ink-400);
+    margin-bottom: 6px;
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .ic-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--color-text-muted);
+    margin-top: auto;
+    font-family: var(--font-body);
+  }
+  .ic-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--stone-400); }
+  .ic-spotlight-meta {
+    font-size: 12px;
+    color: var(--amber-700);
+    font-weight: 600;
+    margin-top: auto;
+    padding-top: 10px;
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .ic-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--jade-600);
+    margin-top: 14px;
+    transition: gap 0.2s;
+    font-family: var(--font-body);
+  }
+  .ic-link:hover { gap: 8px; }
+  .ic-link.amber { color: var(--amber-600); }
+
+  /* ── Empty State ── */
+  .no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 80px 24px;
+    color: var(--color-text-muted);
+  }
+  .no-results h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: var(--ink-700);
+  }
+  .no-results button {
+    background: none;
+    border: none;
+    color: var(--jade-600);
+    font-weight: 600;
+    cursor: pointer;
+    font-size: inherit;
+    font-family: var(--font-body);
+    text-decoration: underline;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 1024px) {
+    .insights-grid { grid-template-columns: repeat(2, 1fr); }
+    .ic.featured   { grid-column: span 2; }
+  }
+  @media (max-width: 768px) {
+    .insights-grid { grid-template-columns: 1fr; }
+    .ic.featured   { grid-column: span 1; }
+    .ic-img-ratio-wide { aspect-ratio: 16 / 9; }
+    .filters-inner { gap: 6px; }
+  }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════════════ -->
+  <nav class="nav scrolled" id="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand" aria-label="Third Peak home">
+        <span class="nav-wordmark">
+          THIRD&nbsp;PE<svg class="nav-peak" viewBox="0 0 14 14" fill="none" aria-hidden="true"><polygon points="7,1 13,13 1,13" fill="currentColor"/></svg>K
+        </span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="navLinks" role="list">
+        <a href="../index.html#how-we-help" class="nav-link" role="listitem">How We Help</a>
+        <a href="../index.html#portfolio"   class="nav-link" role="listitem">Our Work</a>
+        <a href="./"                        class="nav-link" role="listitem" aria-current="page">Insights</a>
+        <a href="../index.html#about"       class="nav-link" role="listitem">About</a>
+        <a href="../index.html#contact"     class="nav-cta"  role="listitem">Start a Conversation</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════
+         HERO
+    ════════════════════════════════════════════ -->
+    <section class="ins-hero" aria-label="Insights">
+      <div class="container">
+        <span class="eyebrow reveal">Insights</span>
+        <h1 class="reveal" style="--delay: 0.1s">Perspective for Leaders Shaping What&rsquo;s Next</h1>
+        <p class="reveal" style="--delay: 0.15s">
+          Ideas, perspectives, and experiments for the AI era. Written and recorded when there's something worth saying.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         FILTER BAR
+    ════════════════════════════════════════════ -->
+    <div class="filters-bar" role="navigation" aria-label="Filter insights">
+      <div class="container">
+        <div class="filters-inner">
+          <span class="filters-label">Type:</span>
+          <button class="filter-btn active" data-filter-type="type" data-value="all"        onclick="filterByType('all')">All</button>
+          <button class="filter-btn"        data-filter-type="type" data-value="article"    onclick="filterByType('article')">Articles</button>
+          <button class="filter-btn"        data-filter-type="type" data-value="podcast"    onclick="filterByType('podcast')">Podcasts</button>
+          <button class="filter-btn"        data-filter-type="type" data-value="spotlight"  onclick="filterByType('spotlight')">Spotlights</button>
+
+          <span class="filters-divider" aria-hidden="true"></span>
+          <span class="filters-label">Topic:</span>
+
+          <button class="filter-btn" data-filter-type="topic" data-value="AI &amp; Work"  onclick="filterByTopic('AI &amp; Work')">AI &amp; Work</button>
+          <button class="filter-btn" data-filter-type="topic" data-value="Education"      onclick="filterByTopic('Education')">Education</button>
+          <button class="filter-btn" data-filter-type="topic" data-value="Leadership"     onclick="filterByTopic('Leadership')">Leadership</button>
+          <button class="filter-btn" data-filter-type="topic" data-value="Skills"         onclick="filterByTopic('Skills')">Skills</button>
+          <button class="filter-btn" data-filter-type="topic" data-value="Strategy"       onclick="filterByTopic('Strategy')">Strategy</button>
+          <button class="filter-btn" data-filter-type="topic" data-value="Tools"          onclick="filterByTopic('Tools')">Tools</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         CARD GRID
+    ════════════════════════════════════════════ -->
+    <section class="insights-body" aria-label="Insights grid">
+      <div class="container">
+        <div class="insights-grid" id="insights-grid">
+          <!-- Rendered by JS below -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       CONTACT
+  ════════════════════════════════════════════ -->
+  <section class="section section-contact" id="contact" aria-label="Contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-content reveal">
+          <span class="eyebrow">Get in Touch</span>
+          <h2 class="contact-heading">Let's have a real conversation.</h2>
+          <p class="contact-lead">
+            Every good path starts with an honest conversation about where you are. No pitch, no sales process — just a focused conversation about what you're facing and where you want to go.
+          </p>
+          <a href="mailto:info@thirdpeakstudio.com" class="btn btn-primary btn-lg">
+            Send us a note
+          </a>
+          <p class="contact-secondary">
+            Or reach us directly at <a href="mailto:info@thirdpeakstudio.com">info@thirdpeakstudio.com</a>
+          </p>
+        </div>
+        <div class="contact-aside reveal" style="--delay: 0.2s" aria-hidden="true">
+          <svg class="contact-mark" viewBox="0 0 80 48" fill="none">
+            <path d="M0 48 L18 28 L36 48Z"  fill="currentColor" opacity="0.20"/>
+            <path d="M14 48 L36 12 L58 48Z" fill="currentColor" opacity="0.40"/>
+            <path d="M32 48 L56 2 L80 48Z"  fill="currentColor" opacity="0.65"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════ -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand-block">
+          <span class="footer-wordmark">
+            THIRD&nbsp;PE<svg class="footer-peak" viewBox="0 0 14 14" fill="none" aria-hidden="true"><polygon points="7,1 13,13 1,13" fill="currentColor"/></svg>K
+          </span>
+          <p class="footer-tagline">Technology powered. Human centered.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <div class="footer-col">
+            <div class="footer-col-label">Services</div>
+            <a href="../index.html#how-we-help">Strategy</a>
+            <a href="../index.html#how-we-help">Education</a>
+            <a href="../index.html#how-we-help">Product</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-label">Company</div>
+            <a href="../index.html#about">About</a>
+            <a href="./">Insights</a>
+            <a href="../index.html#contact">Contact</a>
+            <a href="../privacy.html">Privacy</a>
+            <a href="../support.html">Support</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Third Peak Ltd. All rights reserved.</span>
+        <span>thirdpeakstudio.com</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script src="data.js"></script>
+  <script>
+  /* ─── Filter state ─────────────────────────────────────── */
+  let activeType  = 'all';
+  let activeTopic = 'all';
+
+  function filterByType(type) {
+    activeType = type;
+    if (type === 'all') activeTopic = 'all'; // "All" type resets topic too
+    syncPills();
+    renderGrid();
+  }
+
+  function filterByTopic(topic) {
+    activeTopic = topic;
+    syncPills();
+    renderGrid();
+  }
+
+  function resetFilters() {
+    activeType = activeTopic = 'all';
+    syncPills();
+    renderGrid();
+  }
+
+  function syncPills() {
+    document.querySelectorAll('[data-filter-type="type"]').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.value === activeType);
+    });
+    document.querySelectorAll('[data-filter-type="topic"]').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.value === activeTopic);
+    });
+  }
+
+  /* ─── Scroll reveal (separate from script.js instance) ─── */
+  const gridRevealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          gridRevealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+  );
+
+  /* ─── SVG icons ────────────────────────────────────────── */
+  const arrowSvg = `<svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+    <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>`;
+
+  const micSvg = `<svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+    <rect x="3.5" y="1" width="4" height="6" rx="2" fill="white"/>
+    <path d="M1.5 5.5a4 4 0 0 0 8 0" stroke="white" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+    <line x1="5.5" y1="9.5" x2="5.5" y2="11" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+  </svg>`;
+
+  /* ─── Card renderers ───────────────────────────────────── */
+  function renderCard(entry, isFeatured) {
+    if (entry.type === 'article')   return renderArticleCard(entry, isFeatured);
+    if (entry.type === 'podcast')   return renderPodcastCard(entry);
+    if (entry.type === 'spotlight') return renderSpotlightCard(entry, isFeatured);
+    return '';
+  }
+
+  function renderArticleCard(e, isFeatured) {
+    const imgRatio = isFeatured ? 'ic-img-ratio-wide' : 'ic-img-ratio';
+    const imgHtml  = e.coverImage
+      ? `<img src="${e.coverImage}" alt="${escHtml(e.title)}" loading="lazy">`
+      : '';
+    return `
+    <a class="ic${isFeatured ? ' featured' : ''} reveal" href="${e.slug}/" style="--delay: 0s">
+      <div class="ic-img ${imgRatio}">${imgHtml}</div>
+      <div class="ic-body">
+        <div class="ic-tags">${e.tags.map(t => `<span class="ic-tag">${escHtml(t)}</span>`).join('')}</div>
+        <h3>${escHtml(e.title)}</h3>
+        <p>${escHtml(e.excerpt)}</p>
+        <div class="ic-meta">
+          <span>${formatDate(e.date)}</span>
+          <span class="ic-dot"></span>
+          <span>${e.readingTime}</span>
+        </div>
+        <span class="ic-link">Read ${arrowSvg}</span>
+      </div>
+    </a>`;
+  }
+
+  function renderPodcastCard(e) {
+    const showShort = e.show.length > 22 ? e.show.slice(0, 22) + '…' : e.show;
+    return `
+    <a class="ic reveal" href="${e.url}" target="_blank" rel="noopener" style="--delay: 0s">
+      <div class="ic-img ic-img-ratio ic-img-podcast">
+        <div class="ic-badge">${micSvg} ${escHtml(showShort)}</div>
+      </div>
+      <div class="ic-body">
+        <div class="ic-tags">${e.tags.map(t => `<span class="ic-tag">${escHtml(t)}</span>`).join('')}</div>
+        <h3>${escHtml(e.title)}</h3>
+        <p>${escHtml(e.excerpt)}</p>
+        <div class="ic-meta">
+          <span>${formatDate(e.date)}</span>
+          <span class="ic-dot"></span>
+          <span>${escHtml(e.show)}</span>
+        </div>
+        <span class="ic-link">Listen ${arrowSvg}</span>
+      </div>
+    </a>`;
+  }
+
+  function renderSpotlightCard(e, isFeatured) {
+    const imgRatio = isFeatured ? 'ic-img-ratio' : 'ic-img-ratio-portrait';
+    const imgHtml  = e.coverImage
+      ? `<img src="${e.coverImage}" alt="${escHtml(e.title)}" loading="lazy">`
+      : '';
+    const actionHtml = isFeatured
+      ? `<span class="btn btn-primary" style="margin-top:16px;display:inline-flex;align-self:flex-start;">${escHtml(e.ctaLabel)} ${arrowSvg}</span>`
+      : `<span class="ic-link amber">${escHtml(e.ctaLabel)} ${arrowSvg}</span>`;
+    return `
+    <a class="ic spotlight${isFeatured ? ' featured' : ''} reveal" href="${e.url}" target="_blank" rel="noopener" style="--delay: 0s">
+      <div class="ic-img ${imgRatio}">${imgHtml}</div>
+      <div class="ic-body">
+        <div class="ic-eyebrow">Spotlight</div>
+        <div class="ic-tags">${e.tags.map(t => `<span class="ic-tag">${escHtml(t)}</span>`).join('')}</div>
+        <h3>${escHtml(e.title)}</h3>
+        <p>${escHtml(e.excerpt)}</p>
+        ${e.meta ? `<div class="ic-spotlight-meta">${escHtml(e.meta)}</div>` : ''}
+        ${actionHtml}
+      </div>
+    </a>`;
+  }
+
+  /* ─── Render grid ──────────────────────────────────────── */
+  function renderGrid() {
+    const filtered = INSIGHTS_DATA.filter(e =>
+      (activeType  === 'all' || e.type === activeType) &&
+      (activeTopic === 'all' || e.tags.includes(activeTopic))
+    );
+
+    const grid = document.getElementById('insights-grid');
+
+    if (!filtered.length) {
+      grid.innerHTML = `
+        <div class="no-results">
+          <h3>Nothing here for that filter</h3>
+          <p>Try a different filter or <button onclick="resetFilters()">browse everything</button>.</p>
+        </div>`;
+      return;
+    }
+
+    grid.innerHTML = filtered.map((e, i) => {
+      const isFeatured = (i === 0 && e.featured === true);
+      return renderCard(e, isFeatured);
+    }).join('');
+
+    grid.querySelectorAll('.reveal').forEach(el => gridRevealObserver.observe(el));
+  }
+
+  /* ─── Utility ──────────────────────────────────────────── */
+  function escHtml(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  /* ─── Init ─────────────────────────────────────────────── */
+  window.addEventListener('DOMContentLoaded', () => {
+    renderGrid();
+  });
+  </script>
+
+</body>
+</html>

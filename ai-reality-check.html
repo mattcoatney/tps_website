@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Reality Check — Third Peak</title>
+  <meta name="description" content="A focused executive engagement that turns 'we should probably do something with AI' into a specific, prioritized, actionable plan. Fixed fee. Short sprint. Real answers." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="theme.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Page-specific layout ── */
+    .arc-hero {
+      padding: 130px 0 80px;
+      background: var(--jade-100);
+      border-bottom: 1px solid var(--jade-200);
+    }
+
+    .arc-hero .eyebrow { color: var(--jade-600); }
+
+    .arc-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 300;
+      letter-spacing: -0.03em;
+      color: var(--ink-900);
+      max-width: 22ch;
+      margin-bottom: var(--sp-6);
+      line-height: 1.1;
+    }
+
+    .arc-hero-intro {
+      font-size: var(--text-lg);
+      color: var(--ink-600);
+      max-width: 58ch;
+      line-height: 1.75;
+      margin-bottom: var(--sp-10);
+    }
+
+    .arc-meta {
+      display: flex;
+      gap: var(--sp-6);
+      flex-wrap: wrap;
+      margin-bottom: var(--sp-10);
+    }
+
+    .arc-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: var(--text-sm);
+      font-weight: 700;
+      color: var(--jade-700);
+      background: white;
+      padding: 6px 14px;
+      border-radius: var(--r-full);
+      border: 1px solid var(--jade-200);
+    }
+
+    /* ── Content grid ── */
+    .arc-content {
+      padding: var(--sp-24) 0 var(--sp-32);
+    }
+
+    .arc-grid {
+      display: grid;
+      grid-template-columns: 1fr minmax(280px, 380px);
+      gap: var(--sp-16);
+      align-items: start;
+    }
+
+    /* ── Process steps ── */
+    .arc-steps-label {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--jade-500);
+      margin-bottom: var(--sp-8);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .arc-steps-label::before {
+      content: '';
+      display: block;
+      width: 1.75rem;
+      height: 2px;
+      background: currentColor;
+    }
+
+    .arc-steps {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-6);
+      margin-bottom: var(--sp-10);
+    }
+
+    .arc-step {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: var(--sp-5);
+      align-items: start;
+    }
+
+    .arc-step-num {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--jade-500);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .arc-step-body strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: 600;
+      color: var(--ink-900);
+      margin-bottom: 4px;
+      letter-spacing: -0.01em;
+    }
+
+    .arc-step-body p {
+      font-size: var(--text-base);
+      color: var(--ink-500);
+      line-height: 1.65;
+    }
+
+    /* ── Deliverables card ── */
+    .arc-deliverables {
+      background: var(--jade-500);
+      border-radius: var(--r-xl);
+      padding: var(--sp-8);
+      position: sticky;
+      top: calc(72px + var(--sp-6));
+    }
+
+    .arc-deliverables-label {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.65);
+      margin-bottom: var(--sp-6);
+    }
+
+    .arc-deliverables-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-4);
+      margin-bottom: var(--sp-8);
+    }
+
+    .arc-deliverables-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--sp-3);
+      font-size: var(--text-sm);
+      color: rgba(255, 255, 255, 0.90);
+      line-height: 1.55;
+    }
+
+    .arc-deliverables-list li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.55);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    .arc-deliverables .btn-light {
+      width: 100%;
+      justify-content: center;
+    }
+
+    @media (max-width: 768px) {
+      .arc-grid {
+        grid-template-columns: 1fr;
+      }
+      .arc-deliverables { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav scrolled" id="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand" aria-label="Third Peak home">
+        <span class="nav-wordmark">
+          THIRD&nbsp;PE<svg class="nav-peak" viewBox="0 0 14 14" fill="none" aria-hidden="true"><polygon points="7,1 13,13 1,13" fill="currentColor"/></svg>K
+        </span>
+      </a>
+      <div class="nav-links" id="navLinks" role="list">
+        <a href="index.html#how-we-help" class="nav-link" role="listitem">How We Help</a>
+        <a href="index.html#portfolio"   class="nav-link" role="listitem">Our Work</a>
+        <a href="insights/"              class="nav-link" role="listitem">Insights</a>
+        <a href="index.html#about"       class="nav-link" role="listitem">About</a>
+        <a href="index.html#contact"     class="nav-cta"  role="listitem">Start a Conversation</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="arc-hero" aria-label="AI Reality Check">
+      <div class="container">
+        <span class="eyebrow">Strategy</span>
+        <h1>Your fastest path from confusion to clarity.</h1>
+        <p class="arc-hero-intro">
+          A focused executive engagement that turns &ldquo;we should probably do something with AI&rdquo; into a specific, prioritized, actionable plan. Fixed fee. Short sprint. Real answers.
+        </p>
+        <div class="arc-meta">
+          <span class="arc-meta-item">Fixed fee</span>
+          <span class="arc-meta-item">90-day roadmap</span>
+          <span class="arc-meta-item">No giant project</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="arc-content" aria-label="How it works">
+      <div class="container">
+        <div class="arc-grid">
+
+          <div class="arc-left">
+            <p class="arc-steps-label">How it works</p>
+            <div class="arc-steps">
+
+              <div class="arc-step">
+                <div class="arc-step-num">1</div>
+                <div class="arc-step-body">
+                  <strong>Listen &amp; Understand</strong>
+                  <p>Start where you are: your goals, pressures, and current experiments.</p>
+                </div>
+              </div>
+
+              <div class="arc-step">
+                <div class="arc-step-num">2</div>
+                <div class="arc-step-body">
+                  <strong>Assess Honestly</strong>
+                  <p>Evaluate use cases by real value, effort, and risk, not what&rsquo;s trending.</p>
+                </div>
+              </div>
+
+              <div class="arc-step">
+                <div class="arc-step-num">3</div>
+                <div class="arc-step-body">
+                  <strong>Focus on What Matters</strong>
+                  <p>Identify the moves that create real leverage, and the ones that won&rsquo;t.</p>
+                </div>
+              </div>
+
+              <div class="arc-step">
+                <div class="arc-step-num">4</div>
+                <div class="arc-step-body">
+                  <strong>Hand You a Roadmap</strong>
+                  <p>Leave with a 90-day plan and one concrete next step ready to execute.</p>
+                </div>
+              </div>
+
+            </div>
+
+            <a href="mailto:info@thirdpeakstudio.com" class="btn btn-primary">Start the conversation</a>
+          </div>
+
+          <div class="arc-right">
+            <div class="arc-deliverables">
+              <div class="arc-deliverables-label">What you get</div>
+              <ul class="arc-deliverables-list">
+                <li>Executive AI brief tailored to the business</li>
+                <li>Opportunity map across revenue, efficiency, and operations</li>
+                <li>Ranked priorities based on value, effort, readiness, and risk</li>
+                <li>Clear view of dead ends, traps, and likely wasted-spend areas</li>
+                <li>90-day roadmap and longer term recommendations</li>
+                <li>First use case blueprint for pilot planning or vendor evaluation</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: var(--sp-8);">
+        <span>&copy; 2026 Third Peak Ltd. All rights reserved.</span>
+        <a href="index.html" style="color: rgba(255,255,255,0.45);">&larr; Back to thirdpeakstudio.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

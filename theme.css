@@ -1,66 +1,68 @@
 :root {
   /* ─── Color Primitives ──────────────────────────── */
 
-  /* Alpine teal (primary accent — mountain path motif) */
-  --sage-700: #2A5248;
-  --sage-600: #3A6860;
-  --sage-500: #4E7A6E;
-  --sage-400: #7AAA98;
-  --sage-300: #BADDD4;
-  --sage-100: #E8F3F0;
+  /* Jade / Teal (Strategy, primary accent) */
+  --jade-700: #17877A;
+  --jade-600: #1EA898;
+  --jade-500: #2BB5A0;
+  --jade-400: #5ECEBE;
+  --jade-300: #9DE2D8;
+  --jade-200: #C8F0EB;
+  --jade-100: #E5F8F6;
 
-  /* Slate (dark sections, nav) */
-  --navy-950: #141E28;
-  --navy-900: #1E2E3C;
-  --navy-800: #2A3E50;
-  --navy-700: #445E78;
+  /* Amber / Gold (Education) */
+  --amber-700: #B87800;
+  --amber-600: #D49200;
+  --amber-500: #F0A500;
+  --amber-400: #F7BE45;
+  --amber-300: #FAD98A;
+  --amber-100: #FEF5DC;
 
-  /* Mountain white (page background — cool, clean) */
+  /* Terra / Coral (Product) */
+  --terra-700: #B84E2A;
+  --terra-600: #CC6240;
+  --terra-500: #E07050;
+  --terra-400: #EE9278;
+  --terra-300: #F8BFAE;
+  --terra-100: #FEEDE8;
+
+  /* Stone (backgrounds, borders) */
   --stone-50:  #FFFFFF;
-  --stone-100: #F3F5F4;
-  --stone-200: #E6EBEA;
-  --stone-300: #D4DCDB;
-  --stone-400: #BBCAC8;
-  --stone-500: #9AAFAD;
+  --stone-100: #F7F7F4;
+  --stone-200: #EEEDE8;
+  --stone-300: #D8D6CE;
+  --stone-400: #BEBCB0;
+  --stone-500: #9A9890;
 
-  /* Ink (text on light backgrounds) */
-  --ink-950: #101820;
-  --ink-900: #1A2A3A;
-  --ink-800: #243547;
-  --ink-700: #2E4A60;
-  --ink-600: #3A5668;
-  --ink-500: #476070;
-  --ink-400: #637E8C;
-  --ink-300: #8AA0AC;
-  --ink-200: #B4C8D0;
-  --ink-100: #D8E6EC;
-
-  /* Cream (text on dark backgrounds) */
-  --cream-100: rgba(255, 255, 255, 0.95);
-  --cream-200: rgba(255, 255, 255, 0.75);
-  --cream-300: rgba(255, 255, 255, 0.55);
-  --cream-400: rgba(255, 255, 255, 0.38);
+  /* Ink (text) */
+  --ink-950: #0E1A1E;
+  --ink-900: #1A2830;
+  --ink-800: #253640;
+  --ink-700: #30454E;
+  --ink-600: #3E5560;
+  --ink-500: #506070;
+  --ink-400: #6A8090;
+  --ink-300: #90A8B5;
+  --ink-200: #C0D0D8;
+  --ink-100: #E0EAEE;
 
   /* ─── Semantic ──────────────────────────────────── */
-  --color-bg:              var(--stone-100);
-  --color-bg-alt:          var(--stone-200);
-  --color-bg-dark:         var(--navy-900);
-  --color-bg-dark-mid:     var(--navy-800);
-  --color-bg-darkest:      var(--navy-950);
-
+  --color-bg:              var(--stone-50);
+  --color-bg-alt:          var(--stone-100);
   --color-text:            var(--ink-900);
   --color-text-soft:       var(--ink-500);
   --color-text-muted:      var(--ink-400);
-  --color-text-on-dark:    var(--cream-100);
-  --color-text-soft-dark:  var(--cream-200);
-  --color-text-muted-dark: var(--cream-300);
 
-  --color-accent:          var(--sage-500);
-  --color-accent-light:    var(--sage-400);
+  --color-accent:          var(--jade-500);
+  --color-accent-dark:     var(--jade-700);
+  --color-accent-light:    var(--jade-300);
 
-  --color-border:          var(--stone-400);
-  --color-border-alt:      var(--stone-300);
-  --color-border-dark:     rgba(255, 255, 255, 0.09);
+  --color-strategy:        var(--jade-500);
+  --color-education:       var(--amber-500);
+  --color-product:         var(--terra-500);
+
+  --color-border:          var(--stone-300);
+  --color-border-alt:      var(--stone-200);
 
   /* ─── Typography ────────────────────────────────── */
   --font-display: 'Source Serif 4', Georgia, serif;
@@ -102,10 +104,11 @@
   --r-full: 9999px;
 
   /* ─── Shadows ───────────────────────────────────── */
-  --shadow-sm:   0 1px 3px rgba(20,30,40,0.07), 0 1px 2px rgba(20,30,40,0.04);
-  --shadow-md:   0 4px 14px rgba(20,30,40,0.09), 0 2px 4px rgba(20,30,40,0.05);
-  --shadow-lg:   0 16px 48px rgba(20,30,40,0.13), 0 4px 12px rgba(20,30,40,0.07);
-  --shadow-sage: 0 8px 24px rgba(78, 122, 110, 0.28);
+  --shadow-sm:   0 1px 3px rgba(14,26,30,0.06), 0 1px 2px rgba(14,26,30,0.04);
+  --shadow-md:   0 4px 14px rgba(14,26,30,0.08), 0 2px 4px rgba(14,26,30,0.04);
+  --shadow-lg:   0 16px 48px rgba(14,26,30,0.10), 0 4px 12px rgba(14,26,30,0.05);
+  --shadow-jade: 0 8px 24px rgba(43, 181, 160, 0.24);
+  --shadow-card: 0 2px 8px rgba(14,26,30,0.07), 0 1px 3px rgba(14,26,30,0.04);
 
   /* ─── Motion ────────────────────────────────────── */
   --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
