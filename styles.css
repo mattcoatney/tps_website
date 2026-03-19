@@ -339,8 +339,11 @@ h1, h2, h3, h4 {
 .hero-content {
   position: relative;
   z-index: 1;
-  padding: var(--sp-24) max(var(--sp-8), calc((100vw - 1200px) / 2 + var(--sp-8)));
+  box-sizing: content-box;
   padding-top: calc(72px + var(--sp-24));
+  padding-bottom: var(--sp-24);
+  padding-left: max(var(--sp-8), calc((100vw - 1200px) / 2 + var(--sp-8)));
+  padding-right: var(--sp-8);
   max-width: min(680px, 58vw);
 }
 

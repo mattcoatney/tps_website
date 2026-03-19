@@ -4,13 +4,13 @@
   /* ─── Color Primitives ──────────────────────────── */
 
   /* Jade / Teal (Strategy, primary accent) */
-  --jade-700: #17877A;
-  --jade-600: #1EA898;
-  --jade-500: #2BB5A0;
-  --jade-400: #5ECEBE;
-  --jade-300: #9DE2D8;
-  --jade-200: #C8F0EB;
-  --jade-100: #E5F8F6;
+  --jade-700: #1279A0;
+  --jade-600: #1796C0;
+  --jade-500: #20A8D8;
+  --jade-400: #50C4E8;
+  --jade-300: #90DAF2;
+  --jade-200: #C0ECF8;
+  --jade-100: #E0F6FC;
 
   /* Amber / Gold (Education) */
   --amber-700: #B87800;
@@ -109,7 +109,7 @@
   --shadow-sm:   0 1px 3px rgba(14,26,30,0.06), 0 1px 2px rgba(14,26,30,0.04);
   --shadow-md:   0 4px 14px rgba(14,26,30,0.08), 0 2px 4px rgba(14,26,30,0.04);
   --shadow-lg:   0 16px 48px rgba(14,26,30,0.10), 0 4px 12px rgba(14,26,30,0.05);
-  --shadow-jade: 0 8px 24px rgba(43, 181, 160, 0.24);
+  --shadow-jade: 0 8px 24px rgba(32, 168, 216, 0.24);
   --shadow-card: 0 2px 8px rgba(14,26,30,0.07), 0 1px 3px rgba(14,26,30,0.04);
 
   /* ─── Motion ────────────────────────────────────── */
