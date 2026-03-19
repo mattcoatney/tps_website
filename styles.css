@@ -1955,3 +1955,16 @@ h1, h2, h3, h4 {
     gap: var(--sp-8);
   }
 }
+
+/* ── Mobile typography scale ──────────────────────────────────────────────
+   Bump token values up ~1 step on small screens so all var(--text-*)
+   references automatically inherit larger sizes without touching selectors. */
+@media (max-width: 600px) {
+  :root {
+    --text-xs:   0.875rem;   /* 14px → was 12px */
+    --text-sm:   1rem;       /* 16px → was 14px */
+    --text-base: 1.125rem;   /* 18px → was 16px */
+    --text-lg:   1.25rem;    /* 20px → was 18px */
+    --text-xl:   1.375rem;   /* 22px → was 20px */
+  }
+}
