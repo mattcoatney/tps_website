@@ -137,167 +137,156 @@
         </p>
       </div>
 
+      <!-- Portfolio grid — replaces carousel -->
+      <div class="portfolio-grid reveal" style="--delay: 0.1s" id="portfolioGrid" aria-label="Client portfolio">
+
+        <!-- Item 1: Subterra AI (wide) -->
+        <div class="pg-item pg-item--wide" data-portfolio="0" data-color="jade" role="button" tabindex="0" aria-label="Subterra AI — click for details">
+          <div class="pg-img"><img src="images/portfolio/subterra.jpg" alt="Underground utility infrastructure tunnel" /></div>
+          <div class="pg-info">
+            <span class="pg-company">Subterra AI</span>
+            <span class="pg-title">AI advisory from early-stage growth to exit</span>
+          </div>
+        </div>
+
+        <!-- Item 2: Begin Bright (fills row 1 col 3) -->
+        <div class="pg-item" data-portfolio="1" data-color="terra" role="button" tabindex="0" aria-label="Begin Bright — click for details">
+          <div class="pg-img"><img src="images/portfolio/begin-bright.jpg" alt="Parent reading to a young child" /></div>
+          <div class="pg-info">
+            <span class="pg-company">Begin Bright</span>
+            <span class="pg-title">Early literacy platform with Dolly Parton&rsquo;s Imagination Library</span>
+          </div>
+        </div>
+
+        <!-- Item 4: PATHS Education (fills row 2 col 3) -->
+        <div class="pg-item" data-portfolio="2" data-color="jade" role="button" tabindex="0" aria-label="PATHS Education — click for details">
+          <div class="pg-img"><img src="images/portfolio/paths-education.jpg" alt="Teacher using puppets to interact with children" /></div>
+          <div class="pg-info">
+            <span class="pg-company">PATHS Education</span>
+            <span class="pg-title">K&ndash;5th grade social and emotional learning program</span>
+          </div>
+        </div>
+
+        <!-- Item 5: Gale Cengage -->
+        <div class="pg-item" data-portfolio="3" data-color="amber" role="button" tabindex="0" aria-label="Gale Cengage — click for details">
+          <div class="pg-img"><img src="images/portfolio/gale-cengage.jpg" alt="Professor researching in a university library" /></div>
+          <div class="pg-info">
+            <span class="pg-company">Gale Cengage</span>
+            <span class="pg-title">AI integration strategy for a leading digital research platform</span>
+          </div>
+        </div>
+
+        <!-- Item 6: Gates Foundation -->
+        <div class="pg-item" data-portfolio="4" data-color="terra" role="button" tabindex="0" aria-label="Gates Foundation — click for details">
+          <div class="pg-img"><img src="images/portfolio/gates-foundation.jpg" alt="Joyful community members in a global development context" /></div>
+          <div class="pg-info">
+            <span class="pg-company">Gates Foundation</span>
+            <span class="pg-title">Novel AI models identifying global health policy interventions</span>
+          </div>
+        </div>
+
+        <!-- Item 7: Osher (normal size) -->
+        <div class="pg-item" data-portfolio="5" data-color="jade" role="button" tabindex="0" aria-label="Osher — click for details">
+          <div class="pg-img"><img src="images/portfolio/osher.jpg" alt="Integrative medicine practitioner with a patient" /></div>
+          <div class="pg-info">
+            <span class="pg-company">Osher</span>
+            <span class="pg-title">Practitioner discovery for integrative medicine</span>
+          </div>
+        </div>
+
+                <!-- Item 3: Bounceback (wide — leads row 2) -->
+        <div class="pg-item pg-item--wide" data-portfolio="6" data-color="amber" role="button" tabindex="0" aria-label="Bounceback — click for details">
+          <div class="pg-img"><img src="images/portfolio/bounceback.jpg" alt="Teacher engaging with classroom of children" /></div>
+          <div class="pg-info">
+            <span class="pg-company">Bounceback</span>
+            <span class="pg-title">Technology turnaround for K-12 educator wellbeing app</span>
+          </div>
+        </div>
+
+
+      </div>
+
+      <!--
+      *** ORIGINAL CAROUSEL — saved for revert ***
       <div class="portfolio-carousel" aria-label="Client portfolio">
 
-        <!-- Slide 1: Subterra AI -->
         <div class="portfolio-slide active" aria-label="Subterra AI">
-          <div class="portfolio-slide-bg">
-            <img src="images/portfolio/subterra.jpg" alt="Underground utility infrastructure tunnel" />
-          </div>
+          <div class="portfolio-slide-bg"><img src="images/portfolio/subterra.jpg" alt="Underground utility infrastructure tunnel" /></div>
           <div class="portfolio-callout portfolio-callout--jade">
             <p class="portfolio-callout-company">Subterra AI</p>
             <p class="portfolio-callout-desc">Advised and developed AI technology for a growing early stage company helping improve municipal water quality and safety through use of submersible drones.  Led to successful exit with IDEX Corporation.</p>
             <p class="portfolio-callout-quote">&ldquo;Third Peak was instrumental early, helping us sharpen our technical foundation before outside investment. Their ability to bridge business strategy and deep technology made him invaluable at every stage.&rdquo;</p>
             <p class="portfolio-callout-attr">Rob Lee &mdash; CEO &amp; Founder</p>
-            <div class="portfolio-callout-nav">
-              <button class="pc-nav-btn pc-prev-btn" aria-label="Previous story">&#8592; Previous</button>
-              <button class="pc-nav-btn pc-next-btn" aria-label="Next story">Next &#8594;</button>
-            </div>
+            <div class="portfolio-callout-nav"><button class="pc-nav-btn pc-prev-btn">&#8592; Previous</button><button class="pc-nav-btn pc-next-btn">Next &#8594;</button></div>
           </div>
         </div>
-
-        <!-- Slide 2: Bounceback -->
         <div class="portfolio-slide" aria-label="Bounceback">
-          <div class="portfolio-slide-bg">
-            <img src="images/portfolio/bounceback.jpg" alt="Teacher engaging with classroom of children" />
-          </div>
+          <div class="portfolio-slide-bg"><img src="images/portfolio/bounceback.jpg" alt="Teacher engaging with classroom of children" /></div>
           <div class="portfolio-callout portfolio-callout--amber">
             <p class="portfolio-callout-company">Bounceback</p>
             <p class="portfolio-callout-desc">Led technology turnaround and strategy for mission-focused digital learning company improving wellbeing for K-12 educators. Led to successful exit with 3LS ventures.</p>
             <p class="portfolio-callout-quote">&ldquo;Third Peak and Matt are incredible technologists, but more than that, they are true thought partners. They take weight off my shoulders, which is such a relief.&rdquo;</p>
             <p class="portfolio-callout-attr">Dorothy Morelli &mdash; CEO &amp; Founder</p>
-            <div class="portfolio-callout-nav">
-              <button class="pc-nav-btn pc-prev-btn" aria-label="Previous story">&#8592; Previous</button>
-              <button class="pc-nav-btn pc-next-btn" aria-label="Next story">Next &#8594;</button>
-            </div>
+            <div class="portfolio-callout-nav"><button class="pc-nav-btn pc-prev-btn">&#8592; Previous</button><button class="pc-nav-btn pc-next-btn">Next &#8594;</button></div>
           </div>
         </div>
-
-        <!-- Slide 3: Begin Bright -->
         <div class="portfolio-slide" aria-label="Begin Bright">
-          <div class="portfolio-slide-bg">
-            <img src="images/portfolio/begin-bright.jpg" alt="Parent reading to a young child" />
-          </div>
+          <div class="portfolio-slide-bg"><img src="images/portfolio/begin-bright.jpg" alt="Parent reading to a young child" /></div>
           <div class="portfolio-callout portfolio-callout--terra">
             <p class="portfolio-callout-company">Begin Bright</p>
             <p class="portfolio-callout-desc">Led product development and launch strategy for an early childhood literacy platform in partnership with the Dollywood Foundation, Imagination Library, and Nashville Public Library Foundation.</p>
             <p class="portfolio-callout-desc"><a href="https://nplf.org/nashville-public-library-foundation-and-dolly-partons-imagination-library-partner-on-major-new-early-literacy-initiative/" target="_blank">See the Press Release</a></p>
-            <div class="portfolio-callout-nav">
-              <button class="pc-nav-btn pc-prev-btn" aria-label="Previous story">&#8592; Previous</button>
-              <button class="pc-nav-btn pc-next-btn" aria-label="Next story">Next &#8594;</button>
-            </div>
+            <div class="portfolio-callout-nav"><button class="pc-nav-btn pc-prev-btn">&#8592; Previous</button><button class="pc-nav-btn pc-next-btn">Next &#8594;</button></div>
           </div>
         </div>
-
-        <!-- Slide 4: PATHS Education -->
         <div class="portfolio-slide" aria-label="PATHS Education">
-          <div class="portfolio-slide-bg">
-            <img src="images/portfolio/paths-education.jpg" alt="Teacher using puppets to interact with children" />
-          </div>
+          <div class="portfolio-slide-bg"><img src="images/portfolio/paths-education.jpg" alt="Teacher using puppets to interact with children" /></div>
           <div class="portfolio-callout portfolio-callout--jade">
             <p class="portfolio-callout-company">PATHS Education</p>
             <p class="portfolio-callout-desc">Provided technical advisory services for digital outreach, operations, and distribution of an internationally recognized K-5th grade social and emotional learning program.</p>
-            <div class="portfolio-callout-nav">
-              <button class="pc-nav-btn pc-prev-btn" aria-label="Previous story">&#8592; Previous</button>
-              <button class="pc-nav-btn pc-next-btn" aria-label="Next story">Next &#8594;</button>
-            </div>
+            <div class="portfolio-callout-nav"><button class="pc-nav-btn pc-prev-btn">&#8592; Previous</button><button class="pc-nav-btn pc-next-btn">Next &#8594;</button></div>
           </div>
         </div>
-
-        <!-- Slide 5: Gale Cengage -->
         <div class="portfolio-slide" aria-label="Gale Cengage">
-          <div class="portfolio-slide-bg">
-            <img src="images/portfolio/gale-cengage.jpg" alt="Professor researching in a university library" />
-          </div>
+          <div class="portfolio-slide-bg"><img src="images/portfolio/gale-cengage.jpg" alt="Professor researching in a university library" /></div>
           <div class="portfolio-callout portfolio-callout--amber">
             <p class="portfolio-callout-company">Gale Cengage</p>
             <p class="portfolio-callout-desc">Advised on AI integration strategy and product roadmap for a leading digital research and library tools platform, aligning innovation to existing workflows.</p>
-            <div class="portfolio-callout-nav">
-              <button class="pc-nav-btn pc-prev-btn" aria-label="Previous story">&#8592; Previous</button>
-              <button class="pc-nav-btn pc-next-btn" aria-label="Next story">Next &#8594;</button>
-            </div>
+            <div class="portfolio-callout-nav"><button class="pc-nav-btn pc-prev-btn">&#8592; Previous</button><button class="pc-nav-btn pc-next-btn">Next &#8594;</button></div>
           </div>
         </div>
-
-        <!-- Slide 6: Gates Foundation -->
         <div class="portfolio-slide" aria-label="Gates Foundation">
-          <div class="portfolio-slide-bg">
-            <img src="images/portfolio/gates-foundation.jpg" alt="Joyful community members in a global development context" />
-          </div>
+          <div class="portfolio-slide-bg"><img src="images/portfolio/gates-foundation.jpg" alt="Joyful community members in a global development context" /></div>
           <div class="portfolio-callout portfolio-callout--terra">
             <p class="portfolio-callout-company">Gates Foundation</p>
             <p class="portfolio-callout-desc">Developed novel AI solutions to identify effective national policy intervention strategies that could be applied globally to combat malnutrition and disease.</p>
-            <div class="portfolio-callout-nav">
-              <button class="pc-nav-btn pc-prev-btn" aria-label="Previous story">&#8592; Previous</button>
-              <button class="pc-nav-btn pc-next-btn" aria-label="Next story">Next &#8594;</button>
-            </div>
+            <div class="portfolio-callout-nav"><button class="pc-nav-btn pc-prev-btn">&#8592; Previous</button><button class="pc-nav-btn pc-next-btn">Next &#8594;</button></div>
           </div>
         </div>
-
-        <!-- Slide 7: Osher -->
         <div class="portfolio-slide" aria-label="Osher">
-          <div class="portfolio-slide-bg">
-            <img src="images/portfolio/osher.jpg" alt="Integrative medicine practitioner with a patient" />
-          </div>
+          <div class="portfolio-slide-bg"><img src="images/portfolio/osher.jpg" alt="Integrative medicine practitioner with a patient" /></div>
           <div class="portfolio-callout portfolio-callout--jade">
             <p class="portfolio-callout-company">Osher</p>
             <p class="portfolio-callout-desc">Developed novel visualizations for patients to explore and quickly identify the right practitioner for their unique needs.</p>
-            <div class="portfolio-callout-nav">
-              <button class="pc-nav-btn pc-prev-btn" aria-label="Previous story">&#8592; Previous</button>
-              <button class="pc-nav-btn pc-next-btn" aria-label="Next story">Next &#8594;</button>
-            </div>
+            <div class="portfolio-callout-nav"><button class="pc-nav-btn pc-prev-btn">&#8592; Previous</button><button class="pc-nav-btn pc-next-btn">Next &#8594;</button></div>
           </div>
         </div>
 
-        <!-- Controls -->
         <button class="portfolio-prev" aria-label="Previous slide">&#8592;</button>
         <button class="portfolio-next" aria-label="Next slide">&#8594;</button>
-
         <div class="portfolio-dots" role="tablist" aria-label="Slide indicators">
-          <button class="portfolio-dot active" role="tab" aria-label="Slide 1" aria-selected="true"></button>
-          <button class="portfolio-dot" role="tab" aria-label="Slide 2" aria-selected="false"></button>
-          <button class="portfolio-dot" role="tab" aria-label="Slide 3" aria-selected="false"></button>
-          <button class="portfolio-dot" role="tab" aria-label="Slide 4" aria-selected="false"></button>
-          <button class="portfolio-dot" role="tab" aria-label="Slide 5" aria-selected="false"></button>
-          <button class="portfolio-dot" role="tab" aria-label="Slide 6" aria-selected="false"></button>
-          <button class="portfolio-dot" role="tab" aria-label="Slide 7" aria-selected="false"></button>
+          <button class="portfolio-dot active" role="tab" aria-selected="true"></button>
+          <button class="portfolio-dot" role="tab" aria-selected="false"></button>
+          <button class="portfolio-dot" role="tab" aria-selected="false"></button>
+          <button class="portfolio-dot" role="tab" aria-selected="false"></button>
+          <button class="portfolio-dot" role="tab" aria-selected="false"></button>
+          <button class="portfolio-dot" role="tab" aria-selected="false"></button>
+          <button class="portfolio-dot" role="tab" aria-selected="false"></button>
         </div>
-
       </div>
-    </section>
+      *** END ORIGINAL CAROUSEL ***
+      -->
 
-    <!-- ═══════════════════════════════════════════
-         ABOUT (hidden until bio is ready)
-    ════════════════════════════════════════════ -->
-    <section class="section section-about" id="about" aria-label="About" style="display:none">
-      <div class="container">
-        <span class="eyebrow reveal">About</span>
-        <h2 class="section-heading reveal" style="--delay: 0.1s">
-          People behind the work.
-        </h2>
-
-        <div class="about-grid">
-          <div class="about-photo-wrap reveal" style="--delay: 0.15s">
-            <!-- Replace with actual photo: <img src="images/matt-coatney.jpg" alt="Matt Coatney" class="about-photo" /> -->
-            <div class="about-photo-placeholder" aria-label="Photo placeholder">
-              MC
-              <span>Photo coming soon</span>
-            </div>
-          </div>
-
-          <div class="about-content reveal" style="--delay: 0.25s">
-            <h3 class="about-name">Matt Coatney</h3>
-            <p class="about-title">Founder</p>
-            <p class="about-bio">
-              [Placeholder bio -- replace with your own words. Something warm, personal, and honest about your background, your approach, and what brought you to this work. No resume bullets. Just a real person talking to another real person.]
-            </p>
-            <p class="about-bio">
-              [Second paragraph: what you care about, what drives you, what makes this more than just consulting. What do you believe about technology and people?]
-            </p>
-          </div>
-        </div>
-
-      </div>
     </section>
 
   </main>
@@ -438,6 +427,44 @@
   </section>
 
   <!-- ═══════════════════════════════════════════
+       ABOUT
+  ════════════════════════════════════════════ -->
+  <section class="section section-about" id="about" aria-label="About">
+    <div class="container">
+      <span class="eyebrow reveal">About Third Peak</span>
+      <h2 class="section-heading reveal" style="--delay: 0.1s">
+        Built for this moment.<br>Building for a lifetime.
+      </h2>
+
+      <div class="about-content reveal" style="--delay: 0.2s; max-width: 72ch;">
+        <p class="about-lead">
+          Third Peak brings together decades of rare, cross-disciplinary depth that few practitioners can claim. We have spent meaningful time in all of it: not as observers, but as practitioners, builders, and leaders.
+        </p>
+
+        <div class="about-disciplines">
+          <span class="about-discipline">Artificial Intelligence</span>
+          <span class="about-discipline">Executive Strategy</span>
+          <span class="about-discipline">Science and Healthcare</span>
+          <span class="about-discipline">Product Development</span>
+          <span class="about-discipline">Digital Transformation and Content</span>
+          <span class="about-discipline">Software Engineering</span>
+          <span class="about-discipline">Change Management</span>
+        </div>
+
+        <p class="about-body">
+          That breadth is not accidental. The hardest AI challenges are never purely technical. They are organizational, human, and strategic all at once. Understanding how people resist change, how systems behave under uncertainty, how technology and business strategy actually meet. These are the questions that separate AI work that sticks from AI work that doesn&rsquo;t.
+        </p>
+        <p class="about-body">
+          Technology has had three defining eras: the age of mainframes and enterprise computing, the age of the internet and mobile, and now the age of AI. This is the third peak and the one that reshapes everything. We've spent decades climbing: first as an engineer, then as a builder and executive, and now at the intersection of all of it. The third peak is the vantage point where everything comes into focus.
+        </p>
+        <p class="about-body">
+          We didn&rsquo;t create Third Peak to chase a trend. We created it because this is the moment everything we have built toward becomes most useful to the organizations and leaders navigating it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
        CONTACT
   ════════════════════════════════════════════ -->
   <section class="section section-contact" id="contact" aria-label="Contact">
@@ -447,7 +474,7 @@
           <span class="eyebrow">Get in Touch</span>
           <h2 class="contact-heading">Let's have a real conversation.</h2>
           <p class="contact-lead">
-            Every successful path starts with an honest conversation about where you are. No pitch, no sales process. Just a focused conversation about what you're facing and where you want to go.
+            Every successful path starts with an honest conversation about where you are. No pitch. Just a focused conversation about what you're facing and where you want to go.
           </p>
           <a href="mailto:info@thirdpeakstudio.com" class="btn btn-primary btn-lg">
             Send us a note
@@ -506,7 +533,7 @@
 
   <script src="script.js"></script>
   <script>
-    // Portfolio carousel (manual navigation only — no auto-scroll)
+    /* *** ORIGINAL CAROUSEL JS — saved for revert ***
     (function () {
       const carousel = document.querySelector('.portfolio-carousel');
       if (!carousel) return;
@@ -534,12 +561,152 @@
         dot.addEventListener('click', function () { goTo(i); });
       });
 
-      // Callout inline prev/next buttons
       carousel.querySelectorAll('.pc-prev-btn').forEach(function (btn) {
         btn.addEventListener('click', function (e) { e.stopPropagation(); goTo(current - 1); });
       });
       carousel.querySelectorAll('.pc-next-btn').forEach(function (btn) {
         btn.addEventListener('click', function (e) { e.stopPropagation(); goTo(current + 1); });
+      });
+    })();
+    *** END ORIGINAL CAROUSEL JS *** */
+
+    // ── Portfolio tile data ──────────────────────────────────────────────────
+    var portfolioData = [
+      {
+        company: 'Subterra AI',
+        color: 'jade',
+        tag: 'AI Advisory \u00b7 Exit',
+        desc: 'Advised and developed AI technology for a growing early stage company helping improve municipal water quality and safety through use of submersible drones. Led to successful exit with IDEX Corporation.',
+        quote: '\u201cThird Peak was instrumental early, helping us sharpen our technical foundation before outside investment. Their ability to bridge business strategy and deep technology made him invaluable at every stage.\u201d',
+        attr: 'Rob Lee \u2014 CEO &amp; Founder',
+        link: null
+      },
+      {
+        company: 'Begin Bright',
+        color: 'terra',
+        tag: 'Product \u00b7 Launch',
+        desc: 'Led product development and launch strategy for an early childhood literacy platform in partnership with the Dollywood and Nashville Public Library Foundations.',
+        quote: null,
+        attr: null,
+        link: { href: 'https://nplf.org/nashville-public-library-foundation-and-dolly-partons-imagination-library-partner-on-major-new-early-literacy-initiative/', label: 'See the Press Release' }
+      },
+      {
+        company: 'PATHS Education',
+        color: 'jade',
+        tag: 'Technical Advisory',
+        desc: 'Provided technical advisory services for digital outreach, operations, and distribution of an internationally recognized K-5th grade social and emotional learning program.',
+        quote: null,
+        attr: null,
+        link: null
+      },
+      {
+        company: 'Gale Cengage',
+        color: 'amber',
+        tag: 'AI Strategy \u00b7 Product',
+        desc: 'Advised on AI integration strategy and product roadmap for a leading digital research and library tools platform, aligning innovation to existing workflows.',
+        quote: null,
+        attr: null,
+        link: null
+      },
+      {
+        company: 'Gates Foundation',
+        color: 'terra',
+        tag: 'AI Research',
+        desc: 'Developed novel AI solutions to identify effective national policy intervention strategies that could be applied globally to combat malnutrition and disease.',
+        quote: null,
+        attr: null,
+        link: null
+      },
+      {
+        company: 'Osher',
+        color: 'jade',
+        tag: 'Product \u00b7 Visualization',
+        desc: 'Developed novel visualizations for patients to explore and quickly identify the right practitioner for their unique needs.',
+        quote: null,
+        attr: null,
+        link: null
+      },
+      {
+        company: 'Bounceback',
+        color: 'amber',
+        tag: 'Technology Turnaround \u00b7 Exit',
+        desc: 'Led technology turnaround and strategy for mission-focused digital learning company improving wellbeing for K-12 educators. Led to successful exit with 3LS ventures.',
+        quote: '\u201cThird Peak and Matt are incredible technologists, but more than that, they are true thought partners. They take weight off my shoulders, which is such a relief.\u201d',
+        attr: 'Dorothy Morelli \u2014 CEO &amp; Founder',
+        link: null
+      },
+    ];
+
+    var colorBg = { jade: 'var(--jade-500)', amber: 'var(--amber-500)', terra: 'var(--terra-500)' };
+
+    // ── Portfolio tile → inline detail panel ────────────────────────────────
+    (function () {
+      var tiles = document.querySelectorAll('.pg-item');
+      if (!tiles.length) return;
+
+      // Build and attach a detail panel to every tile up front
+      tiles.forEach(function (tile) {
+        var idx = +tile.dataset.portfolio;
+        var d   = portfolioData[idx];
+        var bg  = colorBg[d.color] || colorBg.jade;
+
+        var quoteHtml = d.quote
+          ? '<blockquote class="pg-detail-quote">' + d.quote + '</blockquote>' +
+            (d.attr ? '<p class="pg-detail-attr">' + d.attr + '</p>' : '')
+          : '';
+        var linkHtml = d.link
+          ? '<a href="' + d.link.href + '" target="_blank" rel="noopener" class="pg-detail-link">' + d.link.label + ' &rarr;</a>'
+          : '';
+
+        var panel = document.createElement('div');
+        panel.className = 'pg-detail';
+        panel.style.background = bg;
+        panel.setAttribute('aria-hidden', 'true');
+        panel.innerHTML =
+          '<button class="pg-detail-close" aria-label="Close">&times;</button>' +
+          '<p class="pg-detail-tag">' + d.tag + '</p>' +
+          '<h3 class="pg-detail-company">' + d.company + '</h3>' +
+          '<p class="pg-detail-desc">' + d.desc + '</p>' +
+          quoteHtml +
+          linkHtml;
+
+        panel.querySelector('.pg-detail-close').addEventListener('click', function (e) {
+          e.stopPropagation();
+          tile.classList.remove('active');
+          panel.setAttribute('aria-hidden', 'true');
+        });
+
+        tile.appendChild(panel);
+
+        tile.addEventListener('click', function () {
+          var isActive = tile.classList.contains('active');
+          // Close all others
+          tiles.forEach(function (t) {
+            t.classList.remove('active');
+            var p = t.querySelector('.pg-detail');
+            if (p) p.setAttribute('aria-hidden', 'true');
+          });
+          if (!isActive) {
+            tile.classList.add('active');
+            panel.setAttribute('aria-hidden', 'false');
+          }
+        });
+
+        tile.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tile.click(); }
+          if (e.key === 'Escape') { tile.classList.remove('active'); panel.setAttribute('aria-hidden', 'true'); }
+        });
+      });
+
+      // Close active panel when clicking outside the grid
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest('.pg-item')) {
+          tiles.forEach(function (t) {
+            t.classList.remove('active');
+            var p = t.querySelector('.pg-detail');
+            if (p) p.setAttribute('aria-hidden', 'true');
+          });
+        }
       });
     })();
 
