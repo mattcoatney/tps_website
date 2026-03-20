@@ -1522,7 +1522,9 @@ h1, h2, h3, h4 {
 .pg-item {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 4 / 3;
+  /* 8/9 makes a 1-col tile exactly as tall as a 2-col 16/9 tile:
+     1 × (9/8) = 2 × (9/16) = 9/8 column-widths */
+  aspect-ratio: 8 / 9;
   cursor: pointer;
 }
 
@@ -1726,6 +1728,56 @@ h1, h2, h3, h4 {
 .pg-detail-link:hover { border-color: white; }
 
 /* ============================================================
+   PORTFOLIO TESTIMONIAL QUOTES  (below the tile grid)
+   ============================================================ */
+.portfolio-quotes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  margin-top: 3px;
+}
+
+.pq-item {
+  background: var(--color-bg-alt);
+  padding: var(--sp-10) var(--sp-10) var(--sp-8);
+  position: relative;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.pq-mark {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--jade-400);
+  display: block;
+  margin-bottom: calc(-1 * var(--sp-2));
+  user-select: none;
+}
+
+.pq-text {
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--color-text);
+  line-height: 1.75;
+  flex: 1;
+}
+
+.pq-attr {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  margin-top: var(--sp-2);
+}
+
+/* ============================================================
    MOBILE RESPONSIVE
    ============================================================ */
 @media (max-width: 1024px) {
@@ -1812,6 +1864,20 @@ h1, h2, h3, h4 {
   /* Portfolio grid — 2 columns on tablet */
   .portfolio-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Restore aspect-ratio for stretch tiles — at 2-col, Osher ends up alone
+     in a row (Bounceback span-2 wraps to the next row), so without an
+     explicit ratio it collapses to 0 height */
+  .pg-item:nth-child(2),
+  .pg-item:nth-child(6) {
+    aspect-ratio: 8 / 9;
+    align-self: auto;
+  }
+
+  /* Portfolio quotes — stack on tablet */
+  .portfolio-quotes {
+    grid-template-columns: 1fr;
   }
 
   /* Modal — bottom sheet on mobile */
@@ -1948,9 +2014,23 @@ h1, h2, h3, h4 {
     gap: 2px;
   }
 
+  /* All tiles: shorter 4/3 ratio works better on narrow screens */
+  .pg-item {
+    aspect-ratio: 4 / 3;
+  }
+
   .pg-item--wide {
     grid-column: span 1;
     aspect-ratio: 4 / 3;
+  }
+
+  /* Fix: stretch tiles (nth-child 2 & 6) have aspect-ratio: unset in base CSS
+     which has higher specificity than .pg-item above, so they must be
+     explicitly restored here or they collapse in a 1-column layout */
+  .pg-item:nth-child(2),
+  .pg-item:nth-child(6) {
+    aspect-ratio: 4 / 3;
+    align-self: auto;
   }
 
   .footer-links {

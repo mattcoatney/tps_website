@@ -1,0 +1,17 @@
+<!-- Third Peak — Horizontal wordmark, dark backgrounds — white text + blue triangle A -->
+<!-- "THIRD PEAK" with triangle replacing the A: "THIRD PE▲K" -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 44" fill="none">
+  <defs>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400');</style>
+  </defs>
+  <text x="2" y="38"
+        font-family="'Source Serif 4', Georgia, serif"
+        font-size="28" font-weight="400" letter-spacing="-0.5"
+        fill="#FFFFFF"
+        textLength="148" lengthAdjust="spacingAndGlyphs">THIRD PE</text>
+  <polygon points="161,15 150,38 172,38" fill="#20A8D8"/>
+  <text x="174" y="38"
+        font-family="'Source Serif 4', Georgia, serif"
+        font-size="28" font-weight="400" letter-spacing="-0.5"
+        fill="#FFFFFF">K</text>
+</svg>
