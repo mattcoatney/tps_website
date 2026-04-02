@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Gets Deployed into the Organization You Think You Have — Third Peak</title>
+  <meta name="description" content="Every organization runs two parallel systems: the process you documented and the process that actually happens. AI automation reveals the gap between them." />
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../../favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../theme.css" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <style>
+    .article-hero {
+      padding: 130px 0 60px;
+      background: var(--jade-100);
+      border-bottom: 1px solid var(--jade-200);
+    }
+    .article-hero .eyebrow { color: var(--jade-600); }
+    .article-back {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: var(--text-sm); font-weight: 600;
+      color: var(--jade-600); margin-bottom: var(--sp-6);
+      text-decoration: none; transition: gap 0.2s;
+    }
+    .article-back:hover { gap: 10px; }
+    .article-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 300;
+      letter-spacing: -0.03em;
+      color: var(--ink-900);
+      max-width: 28ch;
+      margin-bottom: var(--sp-6);
+      line-height: 1.15;
+    }
+    .article-meta {
+      display: flex; gap: var(--sp-3); flex-wrap: wrap;
+      margin-bottom: var(--sp-4);
+    }
+    .article-meta-item {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: var(--text-sm); font-weight: 700;
+      color: var(--jade-700);
+      background: white;
+      padding: 5px 12px;
+      border-radius: var(--r-full);
+      border: 1px solid var(--jade-200);
+      font-family: var(--font-body);
+    }
+    .article-tag {
+      display: inline-flex; align-items: center;
+      font-size: 11px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--jade-700); background: var(--jade-100);
+      padding: 3px 10px; border-radius: var(--r-full);
+      font-family: var(--font-body);
+    }
+    .article-body-wrap {
+      padding: var(--sp-20) 0 var(--sp-32);
+    }
+    .article-body {
+      max-width: 70ch;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      font-weight: 400;
+      color: var(--ink-900);
+      margin: var(--sp-10) 0 var(--sp-4);
+      letter-spacing: -0.02em;
+    }
+    .article-body p {
+      font-size: var(--text-base);
+      color: var(--ink-700);
+      line-height: 1.8;
+      margin-bottom: var(--sp-5);
+    }
+    .article-body a {
+      color: var(--jade-600);
+      text-decoration: underline;
+    }
+    .article-body ul, .article-body ol {
+      padding-left: var(--sp-6);
+      margin-bottom: var(--sp-5);
+    }
+    .article-body li {
+      font-size: var(--text-base);
+      color: var(--ink-700);
+      line-height: 1.8;
+      margin-bottom: var(--sp-2);
+    }
+    .article-body strong { color: var(--ink-900); }
+    .article-body em { font-style: italic; }
+    .article-body hr {
+      border: none;
+      border-top: 1px solid var(--stone-300);
+      margin: var(--sp-10) 0;
+    }
+    .article-footer {
+      border-top: 1px solid var(--stone-200);
+      padding-top: var(--sp-10);
+      margin-top: var(--sp-10);
+    }
+    .article-cover-photo {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: var(--r-md);
+      margin-bottom: var(--sp-10);
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav scrolled" id="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="../../index.html" class="nav-brand" aria-label="Third Peak home">
+        <span class="nav-wordmark">
+          THIRD&nbsp;PE<svg class="nav-peak" viewBox="0 0 14 14" fill="none" aria-hidden="true"><polygon points="7,1 13,13 1,13" fill="currentColor"/></svg>K
+        </span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span>
+      </button>
+      <div class="nav-links" id="navLinks" role="list">
+        <a href="../../index.html#how-we-help" class="nav-link" role="listitem">How We Help</a>
+        <a href="../../index.html#portfolio"   class="nav-link" role="listitem">Our Work</a>
+        <a href="../../insights/"              class="nav-link" role="listitem">Insights</a>
+        <a href="../../index.html#about"       class="nav-link" role="listitem">About</a>
+        <a href="../../index.html#contact"     class="nav-cta"  role="listitem">Start a Conversation</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="article-hero" aria-label="Article">
+      <div class="container">
+        <a href="../" class="article-back">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M12 7H2M6 3L2 7l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Back to Insights
+        </a>
+        <span class="eyebrow">Insights</span>
+        <h1>AI Gets Deployed into the Organization You Think You Have</h1>
+        <div class="article-meta">
+          <span class="article-meta-item">Apr 2026</span>
+          <span class="article-meta-item">5 min read</span>
+          <span class="article-tag">AI &amp; Work</span>
+          <span class="article-tag">Leadership</span>
+          <span class="article-tag">Strategy</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="article-body-wrap">
+      <div class="container">
+        <article class="article-body">
+
+          <img
+            src="../../images/cover/imagined_workflows.jpg"
+            alt="Person drafting architectural plans at a desk, with a ruler and rolled blueprints"
+            class="article-cover-photo"
+          />
+
+          <p>A few years ago I was working with a mid-sized professional services firm on a process improvement project. We had process maps. Good ones, actually. Detailed swimlane diagrams showing exactly how work moved from intake through delivery. The leadership team had reviewed them, approved them, presented them to the board.</p>
+
+          <p>Then I spent two days sitting next to the people doing the work.</p>
+
+          <p>The documents bore almost no resemblance to what I observed. The intake form nobody filled out completely was being reconstructed by one analyst who had figured out a shortcut using a shared spreadsheet she'd built herself. Approvals that the process map showed going through a manager were, in practice, handled by a Slack message to a peer who had the right system access. A reporting step that appeared three times in the diagram had been quietly eliminated by the team six months earlier because the downstream consumer had stopped reading the reports.</p>
+
+          <p>The process map wasn't wrong, exactly. It described the intended process. But intended processes and actual processes are not the same thing, and in most organizations I've worked with, the gap between them is wider than leadership believes.</p>
+
+          <p>It matters now because AI is being deployed into those process maps.</p>
+
+          <h2>The Two Organizations Inside Every Organization</h2>
+
+          <p>Every organization runs two parallel systems. The first is the official system: the org chart, the documented workflows, the SOPs, the process diagrams in the enterprise architecture repository. This is the organization that exists on paper and in leadership's mental model. It's coherent, auditable, and largely fictional as a description of daily operations.</p>
+
+          <p>The second is the actual system: the workarounds, the informal networks, the tacit knowledge held by specific people, the shortcuts that developed organically when the last software upgrade broke something and nobody fixed it. This system is how work actually gets done. It's rarely documented because it emerged without authorization. The people who built it are often proud of it and quietly protective of it. Some of it is brilliant improvisation. Some of it is held together with the organizational equivalent of duct tape.</p>
+
+          <p>These two systems coexist in a kind of stable tension. The official system provides legitimacy and auditability. The actual system provides functionality. Leaders generally know the gap exists but underestimate its size, in part because the people closest to the work have learned not to advertise it.</p>
+
+          <p>When you deploy AI into documented processes, you are automating the official system — which means you are automating around the actual work, not through it. You might capture efficiency gains in the parts of the process that were already working. More often, you speed up the handoff to a step that was already broken, or you eliminate the workaround that was quietly compensating for a flaw nobody had gotten around to fixing.</p>
+
+          <h2>Why Design Thinking Is Actually an Ethnographic Method</h2>
+
+          <p>Anthropologists and organizational ethnographers have spent decades developing tools for exactly this problem — studying the gap between what people say they do and what they actually do. They call the official account "espoused theory" and the operational reality "theory in use," a distinction Chris Argyris developed at Harvard in the 1970s that most organizations have never operationalized.</p>
+
+          <p>Design thinking, at its most rigorous, is applied ethnography. The observation phase generates accurate data on actual behavior before you build anything — not empathy in some soft, abstract sense. Watch what people do, not what they report. Follow the artifact through the system, not the process diagram. Ask "show me the last time you did this" rather than "walk me through the process."</p>
+
+          <p>That's where design thinking's real contribution lies. Sticky notes have almost nothing to do with it. The insight is methodological: <strong>you cannot design a good system for a process you haven't accurately observed.</strong> For most organizations, the AI deployment question is organizational archaeology. What is actually happening here?</p>
+
+          <p>The organizations I've seen navigate AI deployment well share one specific behavior: before they automate anything, someone goes and watches the work. Not interviews. Not surveys. Not the process owner's presentation. Observation. Sometimes with a stopwatch. Sometimes by becoming a temporary participant. This is uncomfortable because it reveals things that weren't supposed to be there. It surfaces the improvisation that kept the system running, which is also the improvisation that won't survive automation.</p>
+
+          <h2>What Gets Amplified</h2>
+
+          <p>Automation amplifies whatever the underlying system is doing. If the underlying system is generating good outputs, automation generates them faster. If the underlying system has a flaw, automation scales the flaw.</p>
+
+          <p>If your documented customer onboarding process has a step where data gets manually reconciled because two systems don't talk to each other, and you automate the steps around that reconciliation without fixing the underlying gap, you've just created a faster bottleneck. If your sales qualification process has an informal step where experienced reps apply judgment that isn't captured in the CRM, and you automate the CRM workflow, you've removed the judgment without replacing it.</p>
+
+          <p>The workarounds are particularly dangerous here. They exist because something in the original design didn't work. They work because a skilled person is applying pattern recognition and tacit knowledge. When you automate the surrounding steps without capturing the workaround logic, you don't eliminate the workaround. You eliminate the person doing it, and then the thing the workaround was compensating for becomes visible again, usually in a customer complaint or an operational exception that nobody can explain.</p>
+
+          <p>I've seen this play out in AI-assisted customer service deployments. The automation handles the documented cases cleanly. What surfaces are the edge cases that experienced agents were quietly resolving through judgment calls that never made it into the knowledge base. Those cases don't disappear. They escalate. The escalation rate becomes a proxy metric for how accurately the pre-deployment process observation was done.</p>
+
+          <h2>The Counterintuitive AI Preparation Step</h2>
+
+          <p>Here is what I actually recommend to leaders before any serious workflow automation, and it consistently catches people off guard: <strong>the most important preparation work often has nothing to do with the technology.</strong></p>
+
+          <p>Someone in your organization needs to conduct genuine process observation. That means actual time sitting with the people doing the work — watching what they do, mapping what they actually touch and when and why. Not a process review, not a workshop where managers describe what's supposed to happen.</p>
+
+          <p>This serves two functions. The obvious one: you get accurate data for AI design. The less obvious one: you surface the institutional knowledge that currently lives only in specific people's heads. That knowledge needs to be captured somewhere before automation displaces the people who hold it. In many organizations, the tacit knowledge that runs operations is decades old and irreplaceable. The person who knows why the system does the thing it does is often the person closest to retirement.</p>
+
+          <p>The investment here is organizational, not technological. It requires leaders who are genuinely curious about the gap between the model and the reality, and comfortable with what they'll find. What they'll find, almost universally, is that their organizations are more improvised and more dependent on specific individuals than the process maps suggest — which is simply how organizations function. But it becomes a liability the moment you try to encode the process in software that doesn't improvise.</p>
+
+          <h2>The Honest Question</h2>
+
+          <p>I think about AI deployment as a forcing function for organizational self-knowledge. The technology makes a simple demand: tell me exactly what the process is, and I will do it. Most organizations cannot fully satisfy that demand, because they don't know what the process is — only what it's supposed to be.</p>
+
+          <p>Treating that gap as the first problem to solve — before the vendor is contracted and the implementation is underway — is what separates the deployments that work from the ones that disappoint. Treat the process observation phase as the beginning of the AI project, not a prerequisite to it.</p>
+
+          <p>Before you decide what to automate, spend time understanding what you actually have. Not the diagram. The thing itself. What you learn will change what you build, and almost certainly change what you thought was ready to automate.</p>
+
+          <div class="article-footer">
+            <a href="../" class="article-back">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M12 7H2M6 3L2 7l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Back to Insights
+            </a>
+          </div>
+
+        </article>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand-block">
+          <span class="footer-wordmark">
+            THIRD&nbsp;PE<svg class="footer-peak" viewBox="0 0 14 14" fill="none" aria-hidden="true"><polygon points="7,1 13,13 1,13" fill="currentColor"/></svg>K
+          </span>
+          <p class="footer-tagline">Technology powered. Human centered.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <div class="footer-col">
+            <div class="footer-col-label">Services</div>
+            <a href="../../index.html#how-we-help">Strategy</a>
+            <a href="../../index.html#how-we-help">Education</a>
+            <a href="../../index.html#how-we-help">Product</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-label">Company</div>
+            <a href="../../index.html#about">About</a>
+            <a href="../../insights/">Insights</a>
+            <a href="../../index.html#contact">Contact</a>
+            <a href="../../privacy.html">Privacy</a>
+            <a href="../../support.html">Support</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Third Peak Ltd. All rights reserved.</span>
+        <span>thirdpeakstudio.com</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../script.js"></script>
+</body>
+</html>

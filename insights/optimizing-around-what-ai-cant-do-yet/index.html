@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Optimizing Around What AI Can&rsquo;t Do Yet — Third Peak</title>
+  <meta name="description" content="The organizations most at risk from the next wave of AI capability aren't the laggards. They're the early adopters who built processes around today's limitations." />
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../../favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../theme.css" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <style>
+    .article-hero {
+      padding: 130px 0 60px;
+      background: var(--jade-100);
+      border-bottom: 1px solid var(--jade-200);
+    }
+    .article-hero .eyebrow { color: var(--jade-600); }
+    .article-back {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: var(--text-sm); font-weight: 600;
+      color: var(--jade-600); margin-bottom: var(--sp-6);
+      text-decoration: none; transition: gap 0.2s;
+    }
+    .article-back:hover { gap: 10px; }
+    .article-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 300;
+      letter-spacing: -0.03em;
+      color: var(--ink-900);
+      max-width: 28ch;
+      margin-bottom: var(--sp-6);
+      line-height: 1.15;
+    }
+    .article-meta {
+      display: flex; gap: var(--sp-3); flex-wrap: wrap;
+      margin-bottom: var(--sp-4);
+    }
+    .article-meta-item {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: var(--text-sm); font-weight: 700;
+      color: var(--jade-700);
+      background: white;
+      padding: 5px 12px;
+      border-radius: var(--r-full);
+      border: 1px solid var(--jade-200);
+      font-family: var(--font-body);
+    }
+    .article-tag {
+      display: inline-flex; align-items: center;
+      font-size: 11px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--jade-700); background: var(--jade-100);
+      padding: 3px 10px; border-radius: var(--r-full);
+      font-family: var(--font-body);
+    }
+    .article-body-wrap {
+      padding: var(--sp-20) 0 var(--sp-32);
+    }
+    .article-body {
+      max-width: 70ch;
+      margin: 0 auto;
+    }
+    .article-body h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      font-weight: 400;
+      color: var(--ink-900);
+      margin: var(--sp-10) 0 var(--sp-4);
+      letter-spacing: -0.02em;
+    }
+    .article-body p {
+      font-size: var(--text-base);
+      color: var(--ink-700);
+      line-height: 1.8;
+      margin-bottom: var(--sp-5);
+    }
+    .article-body a {
+      color: var(--jade-600);
+      text-decoration: underline;
+    }
+    .article-body ul, .article-body ol {
+      padding-left: var(--sp-6);
+      margin-bottom: var(--sp-5);
+    }
+    .article-body li {
+      font-size: var(--text-base);
+      color: var(--ink-700);
+      line-height: 1.8;
+      margin-bottom: var(--sp-2);
+    }
+    .article-body strong { color: var(--ink-900); }
+    .article-body em { font-style: italic; }
+    .article-body hr {
+      border: none;
+      border-top: 1px solid var(--stone-300);
+      margin: var(--sp-10) 0;
+    }
+    .article-footer {
+      border-top: 1px solid var(--stone-200);
+      padding-top: var(--sp-10);
+      margin-top: var(--sp-10);
+    }
+    .article-cover-photo {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: var(--r-md);
+      margin-bottom: var(--sp-10);
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav scrolled" id="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="../../index.html" class="nav-brand" aria-label="Third Peak home">
+        <span class="nav-wordmark">
+          THIRD&nbsp;PE<svg class="nav-peak" viewBox="0 0 14 14" fill="none" aria-hidden="true"><polygon points="7,1 13,13 1,13" fill="currentColor"/></svg>K
+        </span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span>
+      </button>
+      <div class="nav-links" id="navLinks" role="list">
+        <a href="../../index.html#how-we-help" class="nav-link" role="listitem">How We Help</a>
+        <a href="../../index.html#portfolio"   class="nav-link" role="listitem">Our Work</a>
+        <a href="../../insights/"              class="nav-link" role="listitem">Insights</a>
+        <a href="../../index.html#about"       class="nav-link" role="listitem">About</a>
+        <a href="../../index.html#contact"     class="nav-cta"  role="listitem">Start a Conversation</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="article-hero" aria-label="Article">
+      <div class="container">
+        <a href="../" class="article-back">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M12 7H2M6 3L2 7l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Back to Insights
+        </a>
+        <span class="eyebrow">Insights</span>
+        <h1>Optimizing Around What AI Can&rsquo;t Do Yet</h1>
+        <div class="article-meta">
+          <span class="article-meta-item">Apr 2026</span>
+          <span class="article-meta-item">5 min read</span>
+          <span class="article-tag">AI &amp; Work</span>
+          <span class="article-tag">Strategy</span>
+          <span class="article-tag">Leadership</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="article-body-wrap">
+      <div class="container">
+        <article class="article-body">
+
+          <img
+            src="../../images/cover/scaffolding.jpg"
+            alt="Bamboo scaffolding wrapped around a building under construction in Hong Kong"
+            class="article-cover-photo"
+            style="object-position: center center;"
+          />
+
+          <p>The standard AI strategy conversation in most leadership teams goes something like this: inventory what AI can do today, identify where that maps onto current workflows, prioritize the highest-value intersections, and build a roadmap. It's a reasonable framework. It's also the framework most likely to create a specific kind of organizational fragility that won't become visible until the technology shifts again.</p>
+
+          <p><strong>The organizations most at risk from the next wave of AI capability aren't the ones that have been slow to adopt. They're the ones that have adopted carefully and built their processes around what AI can reliably do today.</strong></p>
+
+          <p>The goal here is to distinguish between AI investments that hold up as the technology changes and ones that create dependencies — dependencies that look like advantages right up until they don't.</p>
+
+          <h2>When Optimization Becomes a Liability</h2>
+
+          <p>In the early 2000s, a number of media and content companies built sophisticated digital strategies around the realities of the internet at the time. Dial-up constraints shaped everything: page weight, video format, content length, download assumptions. Companies that were thoughtful about this built real advantages. Their content loaded faster. Their user experience was cleaner. They understood their audience's constraints better than competitors who were still thinking in print terms.</p>
+
+          <p>Then broadband arrived, and it arrived quickly. Page weight stopped mattering the same way. Video became viable. Content length assumptions inverted. And the companies that had most carefully optimized for dial-up constraints found that their optimization itself was the problem. It wasn't that their old strategies were simply outdated. It was that the decisions they'd made to work within constraints, the architecture choices, the content formats, the workflow designs, had become embedded in ways that made rapid reconfiguration expensive. The more carefully they had optimized, the deeper the dependency.</p>
+
+          <p>Companies that had been less systematic sometimes adapted faster. They had less to unlearn.</p>
+
+          <p>AI is on the same trajectory. Current AI systems have well-documented limitations: they hallucinate under certain conditions, they struggle with complex multi-step reasoning chains, they require significant human review for high-stakes outputs, their latency makes certain real-time applications impractical. These are real constraints that sensible organizations are designing around right now.</p>
+
+          <p>But the capability trajectory is steep and the improvement cycle is faster than enterprise process redesign. The models released in the past 24 months have substantially closed gaps that were considered fundamental limitations 36 months ago. Reasoning quality, context length, multi-modal capability, and agentic reliability have all improved faster than the most aggressive analyst forecasts from 2022.</p>
+
+          <h2>The Structure of the Risk</h2>
+
+          <p>The risk is that organizations have built operational dependencies on specific current limitations — so when those limitations improve, the process built around them breaks.</p>
+
+          <p>An organization deploys an AI-assisted contract review process. The AI flags issues but is not trusted to do final review, so a dedicated human review step is built in as a required gate for every contract above a certain value. The process is designed carefully around the AI's current error rate. It works well. Throughput improves, review time drops, the team adjusts its staffing model to match.</p>
+
+          <p>Eighteen months later, the model's reliability on contract review has improved substantially. The human gate that was built for a 15% error rate is now checking output with a 2% error rate on the same contract types. The gate is no longer calibrated to the actual risk. But the gate is now embedded in the process, the staffing model, the compliance documentation, and the organizational habit. Removing it requires process redesign, retraining, updated compliance posture, and leadership attention that has to come from somewhere. The organization is not wrong to have built it. But the more carefully it was built, the harder it is to dismantle.</p>
+
+          <p>This pattern will repeat across many domains: review workflows, escalation thresholds, human-in-the-loop requirements, AI-output disclaimers, and the informal norms people have developed around when to trust AI output and when to verify it independently. Many of these are calibrated to current limitations. All of them will need to be recalibrated as those limitations shift.</p>
+
+          <h2>A More Useful Planning Question</h2>
+
+          <p>The planning question most organizations are asking is: "What can we do with AI today?" That's the right question for building a current roadmap. It won't tell you whether your organization can keep pace with a technology that's changing faster than planning cycles.</p>
+
+          <p>A more revealing question: <strong>"What would break in our organization if AI became 10 times more capable in 18 months?"</strong></p>
+
+          <p>This question surfaces fragility that the capability-centric question doesn't. It forces a look at what has been built around current limitations rather than what has been built to deliver value. It identifies the processes, review gates, staffing models, and organizational habits that are currently doing their job but are calibrated to a specific moment in the technology's capability curve.</p>
+
+          <p>When I have worked through this question with leadership teams, the answers cluster around a few categories. Review and verification workflows that were sized for a specific error rate. Job roles that were redefined around AI-assistance assumptions that are already shifting. Vendor contracts that locked in specific model capabilities or SLAs. And perhaps most commonly, informal organizational norms: the team's shared understanding of when AI output is "good enough" to pass forward, which is often based on visceral experience with early models rather than ongoing calibration.</p>
+
+          <p>All of these are reasonable responses to real conditions. The point of the exercise isn't to have avoided building them — it's to know where they are, so that when the capability shifts, the organization can respond quickly rather than discovering the dependency reactively.</p>
+
+          <h2>What Durable Investment Looks Like</h2>
+
+          <p>If specific current capabilities are fragile in the way I've described, what kind of AI investment is actually durable?</p>
+
+          <p>The durable investment is in organizational mechanisms for rapid adaptation, not in specific current configurations. In practice, that means a few things.</p>
+
+          <p>It means building the habit and the process for regular AI capability reviews, not annual but quarterly, where teams revisit the assumptions embedded in their AI-assisted workflows and ask whether those assumptions still hold. This is not a large time investment. It's a discipline. The organizations that will navigate capability shifts well are the ones that have scheduled recalibration rather than treating the current configuration as stable.</p>
+
+          <p>It means designing for reversibility where possible. When you build a human review gate into an AI workflow, document why it's there and what conditions would justify removing it. When you set an AI-output trust threshold, write down the basis for that threshold and what would need to change for it to be reconsidered. These notes feel unnecessary when you're building. They become essential when you're rebuilding.</p>
+
+          <p>It means investing in organizational AI literacy at a level that goes beyond tool training. The people closest to the work need to understand enough about how the systems work to recognize when a limitation has shifted. That's calibration training — helping people develop judgment about a domain they're working in, not just teaching them which buttons to push.</p>
+
+          <p>And it means being honest about where the organization has built dependencies on current limitations, even when those dependencies are well-designed. Knowing where they are is the prerequisite for responding quickly when they need to change.</p>
+
+          <h2>The Actual Question</h2>
+
+          <p>AI strategy for the next two years is a question about organizational learning speed, not technology capability. How fast can your organization reconfigure relative to how fast the technology is changing?</p>
+
+          <p>The answer depends on how your organization is built. The ones that handle this well won't be the ones with the most aggressive current deployment. They'll be the ones that have built the habit of asking what assumptions are embedded in the systems they've built — and have kept those configurations provisional rather than settled.</p>
+
+          <p>The next wave of AI capability will reward the organizations that stayed oriented toward learning rather than locking in. Not the ones that most carefully optimized for the current one.</p>
+
+          <div class="article-footer">
+            <a href="../" class="article-back">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M12 7H2M6 3L2 7l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Back to Insights
+            </a>
+          </div>
+
+        </article>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand-block">
+          <span class="footer-wordmark">
+            THIRD&nbsp;PE<svg class="footer-peak" viewBox="0 0 14 14" fill="none" aria-hidden="true"><polygon points="7,1 13,13 1,13" fill="currentColor"/></svg>K
+          </span>
+          <p class="footer-tagline">Technology powered. Human centered.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <div class="footer-col">
+            <div class="footer-col-label">Services</div>
+            <a href="../../index.html#how-we-help">Strategy</a>
+            <a href="../../index.html#how-we-help">Education</a>
+            <a href="../../index.html#how-we-help">Product</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-label">Company</div>
+            <a href="../../index.html#about">About</a>
+            <a href="../../insights/">Insights</a>
+            <a href="../../index.html#contact">Contact</a>
+            <a href="../../privacy.html">Privacy</a>
+            <a href="../../support.html">Support</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Third Peak Ltd. All rights reserved.</span>
+        <span>thirdpeakstudio.com</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../script.js"></script>
+</body>
+</html>
